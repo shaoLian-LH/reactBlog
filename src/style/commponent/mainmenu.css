@@ -1,0 +1,71 @@
+.ant-menu{
+    z-index: 1000;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    border-bottom: solid 0.125rem #887E79;
+    border-top: solid 0.125rem #887E79;
+    background-color: #ECE3D9;
+    color: #6B6761;
+    font-size: 17px;
+    font-weight: bold;
+}
+.menu-medium{
+    border-left: solid 0.1rem #5A5A5A;
+    border-right: solid 0.1rem #5A5A5A;
+}
+.ant-menu-horizontal, .ant-menu-item, .ant-menu-horizontal{
+    transition: all 0.5s linear;
+}
+.ant-menu-horizontal > .ant-menu-item:hover, 
+.ant-menu-horizontal > .ant-menu-submenu:hover, 
+.ant-menu-horizontal > .ant-menu-item-active, 
+.ant-menu-horizontal > .ant-menu-submenu-active, 
+.ant-menu-horizontal > .ant-menu-item-open, 
+.ant-menu-horizontal > .ant-menu-submenu-open, 
+.ant-menu-horizontal > .ant-menu-item-selected, 
+.ant-menu-horizontal > .ant-menu-submenu-selected{
+    font-size: 22px;
+    transform: scale(1.0);
+    color: #ECE3D9;
+    background-color: #6B6761;
+}
+.ant-menu-horizontal > .ant-menu-item:hover > a, 
+.ant-menu-horizontal > .ant-menu-submenu:hover > a, 
+.ant-menu-horizontal > .ant-menu-item-active > a, 
+.ant-menu-horizontal > .ant-menu-submenu-active > a, 
+.ant-menu-horizontal > .ant-menu-item-open > a, 
+.ant-menu-horizontal > .ant-menu-submenu-open > a, 
+.ant-menu-horizontal > .ant-menu-item-selected > a,
+.ant-menu-horizontal > .ant-menu-item-selected > a{
+    color: #ECE3D9;
+}
+.ant-menu-horizontal > .ant-menu-item:hover, 
+.ant-menu-horizontal > .ant-menu-submenu:hover{
+    text-shadow: 0 0 1px #60B8B8;
+}
+.ant-menu-horizontal > .ant-menu-submenu:hover > a{
+    text-shadow: 0 0 1px #60B8B8;
+}
+.ant-menu-horizontal > .ant-menu-item:hover, 
+.ant-menu-horizontal > .ant-menu-submenu:hover, 
+.ant-menu-horizontal > .ant-menu-item-active, 
+.ant-menu-horizontal > .ant-menu-submenu-active, 
+.ant-menu-horizontal > .ant-menu-item-open, 
+.ant-menu-horizontal > .ant-menu-submenu-open, 
+.ant-menu-horizontal > .ant-menu-item-selected, 
+.ant-menu-horizontal > .ant-menu-submenu-selected{
+    border-bottom: none;
+}
+.ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
+    border-bottom: none;
+}
+.ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
+    top: 0px;
+}
+.anticon{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    top: 0px;
+}
