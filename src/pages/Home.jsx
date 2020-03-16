@@ -17,7 +17,7 @@ function Home(){
     //第二个参数为state的初始状态
     const [fetchesState, fetchDispatch] = useReducer(fetchReducer, {
         isFetching: false,
-        list: []
+        articleList: []
     });
     return (
        <FetchesContext.Provider
@@ -27,13 +27,12 @@ function Home(){
             <MyTitle title="邵莲的博客" />
             <div className = "topicBackgroundColor">
             <HeaderNav />
-            <div className="drop-shadow"></div>
                 <BRouter>
                     <Row 
                         type="flex"
                         justify="center" >
                         <Col 
-                            className = "center-box big-in-test" xs={ 24 }  sm={ 24 }  md={ 18 } lg={ 18 } xl={ 18 }  xxl={ 18 }>
+                            className = "center-box" xs={ 24 }  sm={ 24 }  md={ 18 } lg={ 18 } xl={ 18 }  xxl={ 18 }>
                             <Affix>
                                 <MainMenu />
                             </Affix>

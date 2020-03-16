@@ -11,6 +11,7 @@
 .center-box{
     position: relative;
     margin: 5px 0;
+    min-height: 800px;
 }
 .glass {
     height: 100%;

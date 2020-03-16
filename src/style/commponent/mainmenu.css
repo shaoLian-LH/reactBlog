@@ -63,9 +63,7 @@
 .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
     top: 0px;
 }
-.anticon{
-    position: relative;
-    display: inline-block;
-    width: auto;
-    top: 0px;
+.ant-menu-item .anticon, .ant-menu-submenu-title .anticon{
+    margin-right: 10px;
+    font-size: 20px;
 }

@@ -1,6 +1,7 @@
+// 获取全部文章列表
 const REQUEST_ALL_ARTICLES = "REQUEST_ALL_ARTICLES";
 const RECEIVE_ALL_ARTICLES = "RECEIVE_ALL_ARTICLES";
-
+// 
 
 // 开始请求
 const RequestALLArticles = ()=>({

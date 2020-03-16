@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import '../style/commponent/common.css';
-import '../style/commponent/indexList.css';
+import '../style/commponent/noteList.css';
 import '../style/pages/home.css';
 import { FetchesContext } from '../pages/Home';
 import axios from 'axios';
@@ -12,7 +12,7 @@ import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 
-function IndexList(){
+function NoteList(){
 
     const ctx = useContext(FetchesContext);
     const [reFetch]=useState(ctx.fetchesState.isFetching);
@@ -90,4 +90,4 @@ function IndexList(){
     )
 }
 
-export default IndexList;
+export default NoteList;
