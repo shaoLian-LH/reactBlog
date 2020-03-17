@@ -1,27 +1,50 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useContext, useState } from 'react';
 import MyTitle from '../components/CustomerTitle';
 import '../style/pages/note.css'
-import { Row, Col } from 'antd';
+import { FetchedArticlesByParams } from '../pages/Home';
+import { RequestArticleByParams, RecieveArticleByParams } from '../store/getArticlByTypeOrTitle/action';
+import CONSTURL from '../config/apiUrl';
+import Axios from 'axios';
+import CommonNoteList from '../components/CommonNoteList';
+import DetailNote from '../components/DetailNote';
+import { Route } from 'react-router-dom';
 
-function Note(){
+
+function Note(props){
+
+    const ctx = useContext(FetchedArticlesByParams);
+    const [ reFetch ]=useState(ctx.fetchedArticlesState.isFetching);
+    useEffect(()=>{
+        if(reFetch === false){
+            let str = props.location.search;
+            if(str != null && str.length!==0){
+                ctx.dispatch(RequestArticleByParams);
+                let url = CONSTURL.GET_ARTICLES_BY_PARAMS + str;
+                Axios
+                .get(url)
+                .then(res => {
+                    ctx.dispatch(RecieveArticleByParams(res));
+                });
+            } else {
+                ctx.dispatch(RequestArticleByParams());
+                let url = CONSTURL.GET_ARTICLES_BY_PARAMS;
+                Axios
+                .get(url)
+                .then(res => {
+                    ctx.dispatch(RecieveArticleByParams(res));
+                });
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [ reFetch ])
+
+
     return (
         <Fragment>
             <MyTitle title="邵莲的笔记" />
             <div>
-            <Row 
-                type="flex"
-                justify="center" >
-                <Col xs={ 24 }  sm={ 24 }  md={ 18 } lg={ 18 } xl={ 18 }  xxl={ 18 }>
-                    <div id="leftDiv">
-
-                    </div>
-                </Col>
-                <Col xs={ 0 }  sm={ 0 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
-                    <div id="rightDiv">
-
-                    </div>
-                </Col>
-            </Row>
+                <Route key="commonList" path="/note" exact={true} component={ CommonNoteList } />
+                <Route key="detailNote" path="/note/detail" exact={false} component={ DetailNote } />
             </div>
         </Fragment>
     );

@@ -2,22 +2,20 @@ import React, { useEffect, useState, useContext } from 'react';
 import '../style/commponent/common.css';
 import '../style/commponent/noteList.css';
 import '../style/pages/home.css';
-import { FetchesContext } from '../pages/Home';
-import axios from 'axios';
-import { RequestALLArticles, ReceiveAticlesInfos } from '../store/action';
-import CONSTURL from '../config/apiUrl';
 import { Link } from 'react-router-dom';
-import { CalendarOutlined, FireOutlined } from '@ant-design/icons';
+import { CalendarOutlined, FireOutlined, LoadingOutlined } from '@ant-design/icons';
+import { FetchedArticlesByParams } from '../pages/Home';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 
 function NoteList(){
 
-    const ctx = useContext(FetchesContext);
-    const [reFetch]=useState(ctx.fetchesState.isFetching);
-    const [list, setList] = useState([]);
-    const [pn] = useState(1);
+    const ctx = useContext(FetchedArticlesByParams);
+    const [ reFetch ]=useState(ctx.fetchedArticlesState.isFetching);
+    const [ list, setList ] = useState(ctx.fetchedArticlesState.articleList);
+    const [ isLoading, setIsLoading ] = useState(true);
+
 
     const renderer = new marked.Renderer();
 
@@ -41,45 +39,43 @@ function NoteList(){
     });
 
     useEffect(()=>{
-        ctx.dispatch(RequestALLArticles());
-        let url = CONSTURL.GET_ALL_ARTICLE + pn;
-        axios
-        .get(url)
-        .then(res => {
-            ctx.dispatch(ReceiveAticlesInfos(res));
-            setList(ctx.fetchesState.articleList);
-        });
+        setIsLoading(true);
+        window.setTimeout(() => {
+            setList(ctx.fetchedArticlesState.articleList); 
+            setIsLoading(false); 
+        }, 1500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[reFetch, pn])
-
-
+    },[ reFetch ])
+    
     return (
-        <div className="article-div">
-            {
+        <div className="note-div">
+         {   isLoading?(<div className="loading-div"><LoadingOutlined /></div>):
                 list.map((item) => {
                     return (
                         <Link
                             key = { item.id }
                             to = { "/note/detail?id="+item.id }>
-                            <div className = "article-body" >
-                                <div className="article-showdow"></div>
-                                <div className="article-title-div">
-                                    <div className="article-cell">
-                                        <p className = "article-title">{ item.title }</p>
-                                        <p className = "article-tag">{ item.tagName }</p>
+                            <div className = "note-body" >
+                                <div className="note-showdow"></div>
+                                <div className="note-title-div">
+                                    <div className="note-cell">
+                                        <p className = "note-title"
+                                            dangerouslySetInnerHTML = {{ __html: marked(item.title) }}
+                                        ></p>
+                                        <p className = "note-tag">{ item.tagName }</p>
                                     </div>
                                 </div>
-                                <div className="article-introduce-div">
-                                    <div className="article-cell">
+                                <div className="note-introduce-div">
+                                    <div className="note-cell">
                                         <p 
-                                            className="article-introduce"
+                                            className="note-introduce"
                                             dangerouslySetInnerHTML = {{ __html: marked(item.introduce) }}
                                         ></p>
                                     </div>
                                 </div> 
-                                <div className = "article-icon-div">
-                                    <CalendarOutlined />{ item.addTime }&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <FireOutlined />{ item.fire }
+                                <div className = "note-icon-div">
+                                    <CalendarOutlined />&nbsp;&nbsp;{ item.addTime }&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <FireOutlined />&nbsp;&nbsp;{ item.fire }
                                 </div>
                             </div>
                         </Link>

@@ -1,19 +1,77 @@
+@font-face {
+    font-family: fenbi;
+    src: url(../font/fenbi.otf);
+    font-weight: bold;
+}
 
+*{
+    position: relative;
+}
+#main-blackboard-box{
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.ant-col 
+.ant-col-xs-24 
+.ant-col-sm-24 
+.ant-col-md-18 
+.ant-col-lg-18 
+.ant-col-xl-18 
+.ant-col-xxl-18{
+    text-align: center;
+}
 .blackboard-main{
     background-image: linear-gradient(#44612D,#3F5A2A, #3C5827,#385323,#324B1E,#2C4518,#2C4517,#2A4316);
     z-index: 0;
     margin-top: -5px;
     position: relative;
-    height: 1200px;
-    width: 100%;
-    max-width: 1750px;
+    height: auto;
+    width: 90%;
+    margin: 0 5%;
+    text-align: center;
+    color: white;
 }
+.blackboard-title h1{
+    padding-top: 10px;
+    font-family: fenbi;
+    font-size: 45px;
+    line-height: 45px;
+    color: #A1CE66;
+    
+}
+.blackboard-main h2,
+.blackboard-main h3,
+.blackboard-main h4,
+.blackboard-main h5,
+.blackboard-main h6{
+    font-family: fenbi;
+    font-size: 32px;
+    line-height: 32px;
+    color: #9AD8DD;
+}
+.blackboard-main h3,h4,h5{
+    font: normal 26px/26px fenbi;
+}
+.blackboard-main blockquote{
+    padding-left: 10px;
+    border-left: 3px solid #ccc;
+    background-color: transparent;
+}
+
+.blackboard-body p{
+    padding: 0;
+    font: normal 22px/22px fenbi;
+}
+
 .blackboard-body{
     width: 90%;
     height: auto;
     display: block;
     position: relative;
     left: 5%;
+    text-align: left;
+    margin-bottom: 120px;
 }
 
 .blackboard-bottom{
@@ -25,4 +83,39 @@
     background-image: url('../../image/bottom.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+.comm-box{
+    background-color: transparent;
+    margin-left: .5rem;
+    padding:.3rem;
+    border-radius: .3rem;
+    border-bottom:1px solid #eee;
+}
+.ant-anchor{
+    background: transparent;
+}
+.ant-anchor-wrapper{
+    background: transparent;
+}
+.ant-anchor-ink{
+    background-color: transparent;
+}
+.ant-anchor-ink::before{
+    background-color: transparent;
+}
+.nav-tiitle{
+    display: inline-block;
+    height: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+}
+.ant-anchor-link-title{
+    display: inline-block;
+    height: 16px;
+    font-size: 14px;
+    line-height: 15px;
+}
+.ant-anchor-link{
+    background-color: rgba(255, 255, 255, 0.15);
 }

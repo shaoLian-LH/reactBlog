@@ -18,12 +18,14 @@
 .article-body:hover{
     transform: scale(1.05);
     background: inherit;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px rgba( 120, 115, 109, 0.6);
+    border-width: 1px;
+    border-color: #ECE3D9;
     z-index: 0;
 }
 .article-body:hover > .article-showdow{
     transform: scale(1);
-    background-color: rgba(255, 255, 255, 0.35);
+    background-color: rgba(255, 255, 255, 0.3);
     filter: blur(50%);
 }
 .article-showdow{
@@ -57,9 +59,9 @@
 }
 .article-tag{
     display: inline-block;
-    height: 25px;
+    height: 50px;
     width: auto;
-    font: normal 14px/20px aria;
+    font: normal 16px/45px aria;
     background-color: rgba(107, 103, 97, 0.9);  
     border-radius: 5px;
     color: #ECE3D5;

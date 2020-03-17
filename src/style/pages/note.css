@@ -1,13 +1,17 @@
 #leftDiv{
     position: relative;
     width: 100%;
-    height: 1200px;
-    background-color: black;
+    height: auto;
+    background-color: transparent;
 }
 
 #rightDiv{
     position: relative;
     width: 100%;
     height: 400px;
-    background-color: white;
+}
+
+#nickDiv{
+    width: 100%;
+    height: auto;
 }

@@ -2,20 +2,20 @@ import React, { useEffect, useState, useContext } from 'react';
 import '../style/commponent/common.css';
 import '../style/commponent/indexList.css';
 import '../style/pages/home.css';
-import { FetchesContext } from '../pages/Home';
+import { FetchesAllArticlesContext } from '../pages/Home';
 import axios from 'axios';
-import { RequestALLArticles, ReceiveAticlesInfos } from '../store/action';
+import { RequestALLArticles, ReceiveAticlesInfos } from '../store/getAllArticles/action';
 import CONSTURL from '../config/apiUrl';
 import { Link } from 'react-router-dom';
-import { CalendarOutlined, FireOutlined } from '@ant-design/icons';
+import { CalendarOutlined, FolderOutlined } from '@ant-design/icons';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 
 function IndexList(){
 
-    const ctx = useContext(FetchesContext);
-    const [reFetch]=useState(ctx.fetchesState.isFetching);
+    const ctx = useContext(FetchesAllArticlesContext);
+    const [reFetch]=useState(ctx.fetchesAllArticlesState.isFetching);
     const [list, setList] = useState([]);
     const [pn] = useState(1);
 
@@ -47,7 +47,7 @@ function IndexList(){
         .get(url)
         .then(res => {
             ctx.dispatch(ReceiveAticlesInfos(res));
-            setList(ctx.fetchesState.articleList);
+            setList(ctx.fetchesAllArticlesState.articleList);
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[reFetch, pn])
@@ -59,13 +59,13 @@ function IndexList(){
                 list.map((item) => {
                     return (
                         <Link
-                            key = { item.id }
-                            to = { "/note/detail?id="+item.id }>
+                            key = { item.typeId+item.tagName }
+                            to = { "/note?typeId="+item.typeId }>
                             <div className = "article-body" >
                                 <div className="article-showdow"></div>
                                 <div className="article-title-div">
                                     <div className="article-cell">
-                                        <p className = "article-title">{ item.title }</p>
+                                        {/* <p className = "article-title">{ item.title }</p> */}
                                         <p className = "article-tag">{ item.tagName }</p>
                                     </div>
                                 </div>
@@ -78,8 +78,8 @@ function IndexList(){
                                     </div>
                                 </div> 
                                 <div className = "article-icon-div">
-                                    <CalendarOutlined />{ item.addTime }&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <FireOutlined />{ item.fire }
+                                    <CalendarOutlined />&nbsp;&nbsp;{ item.addTime }&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <FolderOutlined />&nbsp;&nbsp;{ item.count }
                                 </div>
                             </div>
                         </Link>

@@ -1,19 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../style/commponent/mainmenu.css';
 import { Menu } from 'antd';
 import PathConfig from '../config/pathConfig';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { SettingOutlined, HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
 
-function MainMenu(){
-    
+function MainMenu(props){
+
     const [ menuList ] = useState(['首页', '笔记', '工具箱']);
+    const [ selected, setSelected ] = useState("0");
+    const location = useLocation();
+    
+    useEffect(()=>{
+        let str = location.pathname;
+        if(str === "/"){
+            setSelected("0");
+            return ;
+        }
+        for ( let i=1; i < PathConfig.length ;i++ ){
+            if ( str.indexOf(PathConfig[i].path) !== -1){
+                setSelected(""+i);
+                break;
+            }
+        };
+    },[ location ])
 
     return (
         <div>
-            <Menu 
+            <Menu
                 mode="horizontal" 
-                defaultSelectedKeys = { ["1"] } 
+                defaultSelectedKeys = { ["0"] } 
+                selectedKeys = { [selected] }
                 >
                 {
                     menuList.map((name, index)=>{
@@ -24,7 +41,7 @@ function MainMenu(){
                                     key={ index } 
                                 >
                                     <Link 
-                                        key = {index} 
+                                        key = {PathConfig[index].path + index} 
                                         to = {PathConfig[index].path} 
                                     >
                                         <SettingOutlined
