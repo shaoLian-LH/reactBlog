@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import MyTitle from '../components/CustomerTitle';
+import MyTitle from '../components/otherComponents/CustomerTitle';
 
 function ToolBox(){
     return (

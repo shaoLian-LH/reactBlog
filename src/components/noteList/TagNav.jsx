@@ -1,11 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { FetchesAllArticlesContext } from '../pages/Home';
-import '../style/commponent/tagNav.css';
+import { FetchesAllArticlesContext } from '../../pages/Home';
+import '../../style/commponent/tagNav.css';
+import { useLocation } from 'react-router-dom';
 import { Input } from "antd";
 
-function TagNav(){
+// 标签选取区与搜索栏
+function TagNav(props){
 
+    // 获取Home组件创建的上下文，主要获取其中的Tag数组
     const ctx = useContext(FetchesAllArticlesContext);
+    
+    const location = useLocation();
     const [ isFetching ] = useState(ctx.fetchesAllArticlesState.isFetching); 
     const [ tagList, setTagList ] = useState([]);
     const [ titleValue, setTitleValue ] = useState("");
@@ -13,11 +18,24 @@ function TagNav(){
 
     useEffect(()=>{
         setTagList(ctx.fetchesAllArticlesState.articleList);
+        // 根据路由判断此时的选择的Tag类型
+        let search = location.search;
+        let position = search.indexOf("typeId");
+        if( position !== -1 ){
+            let arr = search.split("=");
+            let typeId = arr[1];
+            // 将字符转换为数字
+            setSelectedTag(typeId-0);
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ isFetching ])
 
     const _selectedBtn=(e) =>{
-        setSelectedTag(e);
+        if( selectedTag !== e ){
+            setSelectedTag(e);
+        } else {
+            setSelectedTag(null);
+        }
     }
 
     const _changeTextValue = (e) => {
@@ -25,8 +43,22 @@ function TagNav(){
     }
 
     const _clickToSearh = () => {
-        console.log("点击了")
+        let type = (selectedTag !== null && selectedTag!==undefined && !selectedTag.isNaN)?("typeId="+selectedTag):"";
+        let titleT = titleValue.replace(/\s+/g,"") !== ""?("title="+titleValue):"";
+        let url  = "?";
+        if(type !== "" && titleT !==""){
+            url = url + type + "&" + titleT;
+        } else {
+            if( type !== "" ){
+                url = url + type;
+            } else {
+                url = url + titleT;
+            }
+        }
+        return url;
     }
+
+
     return (
         <div className = "tagNav-div">
             <div className = "tagNav-title">
@@ -36,7 +68,7 @@ function TagNav(){
                 <Input.Search 
                     value = { titleValue }
                     onChange = { (e)=>{ _changeTextValue(e.target.value) } } 
-                    onSearch ={ ()=>{ _clickToSearh()} }
+                    onSearch ={  ()=>{ props.handlerClick(_clickToSearh()) } }
                 />
             </div>
             <div className = "table-cell-div">

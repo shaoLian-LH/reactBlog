@@ -1,48 +1,16 @@
-import React, { Fragment, useEffect, useContext, useState } from 'react';
-import MyTitle from '../components/CustomerTitle';
+import React, { Fragment } from 'react';
+import MyTitle from '../components/otherComponents/CustomerTitle';
 import '../style/pages/note.css'
-import { FetchedArticlesByParams } from '../pages/Home';
-import { RequestArticleByParams, RecieveArticleByParams } from '../store/getArticlByTypeOrTitle/action';
-import CONSTURL from '../config/apiUrl';
-import Axios from 'axios';
-import CommonNoteList from '../components/CommonNoteList';
-import DetailNote from '../components/DetailNote';
+import CommonNoteList from '../components/noteList/CommonNoteList';
+import DetailNote from '../components/noteList/DetailNote';
 import { Route } from 'react-router-dom';
 
-
-function Note(props){
-
-    const ctx = useContext(FetchedArticlesByParams);
-    const [ reFetch ]=useState(ctx.fetchedArticlesState.isFetching);
-    useEffect(()=>{
-        if(reFetch === false){
-            let str = props.location.search;
-            if(str != null && str.length!==0){
-                ctx.dispatch(RequestArticleByParams);
-                let url = CONSTURL.GET_ARTICLES_BY_PARAMS + str;
-                Axios
-                .get(url)
-                .then(res => {
-                    ctx.dispatch(RecieveArticleByParams(res));
-                });
-            } else {
-                ctx.dispatch(RequestArticleByParams());
-                let url = CONSTURL.GET_ARTICLES_BY_PARAMS;
-                Axios
-                .get(url)
-                .then(res => {
-                    ctx.dispatch(RecieveArticleByParams(res));
-                });
-            }
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ reFetch ])
-
-
+function Note(){
     return (
         <Fragment>
             <MyTitle title="邵莲的笔记" />
             <div>
+                {/* 根据路由确定渲染页面内容，分别是笔记列表（标题、分类和简介）和笔记详细内容 */}
                 <Route key="commonList" path="/note" exact={true} component={ CommonNoteList } />
                 <Route key="detailNote" path="/note/detail" exact={false} component={ DetailNote } />
             </div>

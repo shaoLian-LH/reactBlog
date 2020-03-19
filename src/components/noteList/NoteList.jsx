@@ -1,24 +1,18 @@
-import React, { useEffect, useState, useContext } from 'react';
-import '../style/commponent/common.css';
-import '../style/commponent/noteList.css';
-import '../style/pages/home.css';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import '../../style/commponent/common.css';
+import '../../style/commponent/noteList.css';
+import '../../style/pages/home.css';
+import { Link  } from 'react-router-dom';
 import { CalendarOutlined, FireOutlined, LoadingOutlined } from '@ant-design/icons';
-import { FetchedArticlesByParams } from '../pages/Home';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 
-function NoteList(){
-
-    const ctx = useContext(FetchedArticlesByParams);
-    const [ reFetch ]=useState(ctx.fetchedArticlesState.isFetching);
-    const [ list, setList ] = useState(ctx.fetchedArticlesState.articleList);
+// 笔记列表
+function NoteList(props){
+    const [ list, setList ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
-
-
     const renderer = new marked.Renderer();
-
     marked.setOptions({
         renderer: renderer,
         //渲染
@@ -39,13 +33,10 @@ function NoteList(){
     });
 
     useEffect(()=>{
-        setIsLoading(true);
-        window.setTimeout(() => {
-            setList(ctx.fetchedArticlesState.articleList); 
-            setIsLoading(false); 
-        }, 1500);
+        setList(props.list);
+        setIsLoading(props.isReLoad);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[ reFetch ])
+    },[ props ])
     
     return (
         <div className="note-div">

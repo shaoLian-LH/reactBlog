@@ -3,18 +3,24 @@ import { Row, Col, Affix } from 'antd';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
-import Tocify from '../components/tocify';
-import '../style/commponent/blackboard.css';
+import Tocify from '../otherComponents/tocify';
+import '../../style/commponent/blackboard.css';
 import { useLocation } from 'react-router-dom';
-import CONSTURL from '../config/apiUrl';
+import CONSTURL from '../../config/apiUrl';
 import Axios from 'axios';
 
+// 详细笔记页面，主题是黑板
 function DetailNote(){
+    // 判断当前页面是否为初次渲染
     const [ isInitial ] = useState(false);
+    
+    // 将标题和内容的markdown标签进行解析与渲染
     const [ htmlTitle, setHtmltitle ] = useState("");
     const [ htmlContext, setHtmlContext ] = useState("");
 
+    // 获取路由
     const location = useLocation();
+    // 别人写的导航插件
     const tocify = new Tocify();
     const renderer = new marked.Renderer();
 
@@ -40,6 +46,8 @@ function DetailNote(){
             return hljs.highlightAuto(code).value;
         }
     });
+
+    // 根据路由获取文章ID并进行申请
     useEffect(()=>{
         let search = location.search.substring(4);
         let url = CONSTURL.GET_ARTICLE_BY_ID + search;
@@ -52,8 +60,6 @@ function DetailNote(){
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ isInitial ])
-
-    
 
     return (
         <Fragment>

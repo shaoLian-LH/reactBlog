@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
-import '../style/commponent/common.css';
-import '../style/commponent/indexList.css';
-import '../style/pages/home.css';
-import { FetchesAllArticlesContext } from '../pages/Home';
+import '../../style/commponent/common.css';
+import '../../style/commponent/indexList.css';
+import '../../style/pages/home.css';
+import { FetchesAllArticlesContext } from '../../pages/Home';
 import axios from 'axios';
-import { RequestALLArticles, ReceiveAticlesInfos } from '../store/getAllArticles/action';
-import CONSTURL from '../config/apiUrl';
+import { RequestALLArticles, ReceiveAticlesInfos } from '../../store/getAllArticles/action';
+import CONSTURL from '../../config/apiUrl';
 import { Link } from 'react-router-dom';
 import { CalendarOutlined, FolderOutlined } from '@ant-design/icons';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 
+// 首页列表
 function IndexList(){
 
     const ctx = useContext(FetchesAllArticlesContext);

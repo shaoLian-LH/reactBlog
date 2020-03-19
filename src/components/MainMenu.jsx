@@ -5,12 +5,14 @@ import PathConfig from '../config/pathConfig';
 import { Link, useLocation } from 'react-router-dom';
 import { SettingOutlined, HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
 
-function MainMenu(props){
+// 写死的导航菜单
+function MainMenu(){
 
     const [ menuList ] = useState(['首页', '笔记', '工具箱']);
     const [ selected, setSelected ] = useState("0");
     const location = useLocation();
     
+    // 根据路由确定当前Menu的选项
     useEffect(()=>{
         let str = location.pathname;
         if(str === "/"){

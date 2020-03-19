@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar } from 'antd';
-import cat from '../image/cat.png';
-import '../style/commponent/common.css';
+import cat from '../../image/cat.png';
+import '../../style/commponent/common.css';
 import { CSSTransition } from 'react-transition-group';
 import useTypewriter from "react-typewriter-hook";
 const intro = '曾经是舰狗。一名软件工程前端方向的学生，以某舰改二立绘发色为主题色建的个人博客。这个网站以记录本人日常学习经验、踩过的坑和放期末作业为主。';

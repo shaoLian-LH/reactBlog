@@ -23,6 +23,7 @@ export const fetchArticleByParamsReducer=(state,action)=>{
             return newState;
         }
         case RECEIVE_ARTICLES_BY_TYPE_OR_TITIL:{
+            if(action.list.data.infos.list === undefined ) return state;
             let newArticleList = [...action.list.data.infos.list];
             newState.articleList = uniq(newArticleList);
             newState.isFetching = false;
