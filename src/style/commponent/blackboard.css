@@ -31,6 +31,7 @@
     margin: 0 5%;
     text-align: center;
     color: white;
+    pointer-events: none;
 }
 .blackboard-title h1{
     padding-top: 10px;
@@ -45,13 +46,13 @@
 .blackboard-main h4,
 .blackboard-main h5,
 .blackboard-main h6{
-    font-family: fenbi;
+    font-family: STKaiti,KaiTi;
     font-size: 32px;
     line-height: 32px;
     color: #9AD8DD;
 }
 .blackboard-main h3,h4,h5{
-    font: normal 26px/26px fenbi;
+    font: normal 26px/26px STKaiti,KaiTi;
 }
 .blackboard-main blockquote{
     padding-left: 10px;
@@ -61,9 +62,48 @@
 
 .blackboard-body p{
     padding: 0;
-    font: normal 22px/22px fenbi;
+    font: normal 22px/22px KaiTi,STKaiti;
 }
-
+.blackboard-main ul li{
+    font: normal 22px/22px KaiTi,STKaiti;
+}
+.blackboard-main table{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 10px;
+}
+.blackboard-main table tr{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+.blackboard-main table tr td:first-child{
+    color: #9AD8DD;
+}
+.blackboard-main table tr td{
+    border-right: solid 2px white;
+}
+.blackboard-main table tr td:last-child{
+    border-right: none;
+}
+.blackboard-main table th{
+    
+    font: normal 24px/24px KaiTi,STKaiti;
+    text-align: center;
+}
+.blackboard-main table td{
+    font: normal 22px/22px KaiTi,STKaiti;
+    text-align: left;
+    height: auto;
+    padding: 10px;
+    min-width: 90px;
+}
+.blackboard-main code{
+    display: inline-block;
+    width: 95%;
+    text-align: left;
+    margin: 5px 0;
+    padding: 5px 5px;
+    font: normal 18px/18px sans-serif;
+}
 .blackboard-body{
     width: 90%;
     height: auto;
