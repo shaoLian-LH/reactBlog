@@ -1,0 +1,38 @@
+
+.pageDiv{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.pageDiv .pageUl{
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+    
+}
+
+.pageUl li{
+    position: relative;
+    display: inline-block;
+    font: normal 16px/30px aria;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.pageUl .textLi{
+    width: 60px;
+    height: 30px;
+    font: normal 16px/30px aria;
+    color: #6B6761;
+}
+.currentLi{
+    color: #6B6761;
+}
+.disabled{
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+
+

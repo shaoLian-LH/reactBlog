@@ -17,7 +17,8 @@ function TagNav(props){
     const [ selectedTag, setSelectedTag ] = useState();
 
     useEffect(()=>{
-        setTagList(ctx.fetchesAllArticlesState.articleList);
+        let tempList = ctx.fetchesAllArticlesState.articleList;
+        setTagList(tempList);
         // 根据路由判断此时的选择的Tag类型
         let search = location.search;
         let position = search.indexOf("typeId");
@@ -58,6 +59,37 @@ function TagNav(props){
         return url;
     }
 
+    const getButtons = ()=>{
+        let arr = [];
+        if( tagList === null || tagList.length === 0 ){
+            return arr;
+        }
+        for( let i = 0;i < tagList.length ;i ++ ){
+            let temp = tagList[i];
+            let myButton = 
+                <button 
+                    key = { temp.typeId }
+                    className = { selectedTag === temp.typeId 
+                                ? "table-cell table-cell-selected"
+                                : "table-cell"  }
+                    onClick = { ()=>{ _selectedBtn(temp.typeId) } }
+                >
+                    { temp.tagName }
+                </button>
+            ;
+            arr.push(myButton);
+        }
+        let lastbutton = <button 
+                            key = { "poiEatAll" }
+                            className = { "table-cell clearBtn" }
+                            onClick = { ()=>{ _selectedBtn(""); props.handlerClear() } }
+                        >
+                            { "清空选择" }
+                        </button>
+        arr.push(lastbutton);
+        return arr;
+    }
+
 
     return (
         <div className = "tagNav-div">
@@ -73,17 +105,7 @@ function TagNav(props){
             </div>
             <div className = "table-cell-div">
                 {
-                    tagList.map((temp) => {
-                        return (
-                            <button 
-                                key = { temp.typeId }
-                                className = { selectedTag === temp.typeId ? "table-cell table-cell-selected":"table-cell"  }
-                                onClick = { ()=>{ _selectedBtn(temp.typeId) } }
-                            >
-                                { temp.tagName }
-                            </button>
-                        );
-                    })
+                    getButtons()
                 }
             </div>
         </div>

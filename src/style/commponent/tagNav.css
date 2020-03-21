@@ -62,6 +62,14 @@
     transform: scale(1);
     transition: all 1s linear;
 }
+.table-cell{
+    transform: scale(1);
+    transition: all 0.5s linear;
+}
+.table-cell:hover{
+    color: #ECE3D9;
+    background-color: #6B6761;
+}
 button:focus{
     outline: none;
 }
