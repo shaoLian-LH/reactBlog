@@ -67,6 +67,7 @@
     margin-right: 10px;
     font-size: 20px;
 }
+/* 宽屏 */
 @media (max-width: 980px) {
     .ant-menu-item .anticon, .ant-menu-submenu-title .anticon{
         margin-right: 10px;
@@ -95,6 +96,51 @@
         background-color: #ECE3D9;
         color: #6B6761;
         font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+/* iphone4s */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .ant-menu-item .anticon, .ant-menu-submenu-title .anticon{
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+    .ant-menu-horizontal > .ant-menu-item:hover, 
+    .ant-menu-horizontal > .ant-menu-submenu:hover, 
+    .ant-menu-horizontal > .ant-menu-item-active, 
+    .ant-menu-horizontal > .ant-menu-submenu-active, 
+    .ant-menu-horizontal > .ant-menu-item-open, 
+    .ant-menu-horizontal > .ant-menu-submenu-open, 
+    .ant-menu-horizontal > .ant-menu-item-selected, 
+    .ant-menu-horizontal > .ant-menu-submenu-selected{
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+        transform: scale(1.0);
+        color: #ECE3D9;
+        background-color: #6B6761;
+    }
+    .ant-menu{
+        z-index: 1000;
+        height: 40px;
+        width: auto;
+        overflow: hidden;
+        border-bottom: solid 0.125rem #887E79;
+        border-top: solid 0.125rem #887E79;
+        background-color: #ECE3D9;
+        color: #6B6761;
+        font-size: 16px;
         font-weight: bold;
     }
 }

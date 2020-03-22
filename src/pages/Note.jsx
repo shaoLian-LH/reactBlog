@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import MyTitle from '../components/otherComponents/CustomerTitle';
 import '../style/pages/note.css'
 import CommonNoteList from '../components/noteList/CommonNoteList';
@@ -6,6 +6,7 @@ import DetailNote from '../components/noteList/DetailNote';
 import { Route } from 'react-router-dom';
 
 function Note(){
+
     return (
         <Fragment>
             <MyTitle title="邵莲的笔记" />

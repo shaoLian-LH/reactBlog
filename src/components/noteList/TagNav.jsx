@@ -82,7 +82,7 @@ function TagNav(props){
         let lastbutton = <button 
                             key = { "poiEatAll" }
                             className = { "table-cell clearBtn" }
-                            onClick = { ()=>{ _selectedBtn(""); props.handlerClear() } }
+                            onClick = { ()=>{ setTitleValue("");_selectedBtn(""); props.handlerClear() } }
                         >
                             { "清空选择" }
                         </button>

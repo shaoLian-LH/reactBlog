@@ -73,3 +73,36 @@
 button:focus{
     outline: none;
 }
+/* iphone4s */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .tagNav-title{
+        height: 30px;
+        line-height: 30px;
+        text-align: left;
+        font-size: 18px;
+        border-top-left-radius: 0px;
+        border: none;
+    }
+    .target-search-div{
+        height: 40px;
+        border-left: none;
+        padding: 6px 10%;
+    }
+    .table-cell-div{
+        padding: 3px 10%;
+        border-left: none;
+    }
+    
+    .table-cell{
+        height: 30px;
+        padding: 4px 10px;
+        font: bold 14px/14px aria;
+        margin-right: 15px;
+        outline: none;
+        transform: scale(1);
+        transition: all 0.6s linear;
+    }
+  }

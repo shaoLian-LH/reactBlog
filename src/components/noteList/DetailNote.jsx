@@ -1,4 +1,4 @@
-import React,{ useState, useEffect , Fragment} from 'react';
+import React,{ useState , Fragment, useEffect} from 'react';
 import { Row, Col, Affix } from 'antd';
 import marked from 'marked';
 import hljs from 'highlight.js';
@@ -8,12 +8,12 @@ import '../../style/commponent/blackboard.css';
 import { useLocation } from 'react-router-dom';
 import CONSTURL from '../../config/apiUrl';
 import Axios from 'axios';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 
 // 详细笔记页面，主题是黑板
 function DetailNote(){
     // 判断当前页面是否为初次渲染
     const [ isInitial ] = useState(false);
-    
     // 将标题和内容的markdown标签进行解析与渲染
     const [ htmlTitle, setHtmltitle ] = useState("");
     const [ htmlContext, setHtmlContext ] = useState("");
@@ -23,6 +23,7 @@ function DetailNote(){
     // 别人写的导航插件
     const tocify = new Tocify();
     const renderer = new marked.Renderer();
+
 
     renderer.heading = function (text, level, raw){
         const anchor = tocify.add(text, level);
@@ -58,9 +59,10 @@ function DetailNote(){
             setHtmltitle(data.title);
             setHtmlContext(data.content);
         })
+        console.log()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ isInitial ])
-
+    
     return (
         <Fragment>
             <Row>

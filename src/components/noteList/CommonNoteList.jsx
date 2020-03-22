@@ -26,8 +26,7 @@ function CommonNoteList(){
     const [ pageInfo, setPageInfo ] = useState([]);
     // 查询的页数
     const [ pn, setPn ] = useState("1");
-
-
+    
     useEffect(()=>{
         if(initialMe === false){
             _loadData(initialList.search);
@@ -106,11 +105,18 @@ function CommonNoteList(){
         setLocation("");
         setIsReLoad(true);
     }
-
+    
     return(
             <Row 
                 type="flex"
                 justify="center" >
+                {/* 小屏幕时的搜索栏 */}
+                <Col xs={ 24 }  sm={ 24 } md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }>
+                    <TagNav 
+                        handlerClick = { reveiveChanged } 
+                        handlerClear = { handleClearChoice }
+                    />
+                </Col>
                 <Col xs={ 24 }  sm={ 24 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
                     <div id="leftDiv">
                         {/* 左侧的笔记列表 */}

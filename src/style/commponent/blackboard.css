@@ -7,6 +7,20 @@
 *{
     position: relative;
 }
+#backLink{
+    padding: 10px 0px 10px 0px;
+    margin: 5px 0;
+    position: relative;
+    text-align: left;
+    font: bold 16px/16px aria;
+    width: 100%;
+    transition: all 0.8s ease-out;
+    color: #6B6761;
+}
+#backLink:hover{
+    transform: scale(1);
+    color: rgba( 107, 103, 97, 0.8);
+}
 #main-blackboard-box{
     width: 100%;
     position: relative;
@@ -28,7 +42,8 @@
     position: relative;
     height: auto;
     width: 90%;
-    margin: 0 5%;
+    margin:0 5%;
+    margin-top: 10px;
     text-align: center;
     color: white;
     pointer-events: none;
@@ -39,7 +54,6 @@
     font-size: 45px;
     line-height: 45px;
     color: #A1CE66;
-    
 }
 .blackboard-main h2,
 .blackboard-main h3,
@@ -51,9 +65,7 @@
     line-height: 32px;
     color: #9AD8DD;
 }
-.blackboard-main h3,h4,h5{
-    font: normal 26px/26px STKaiti,KaiTi;
-}
+
 .blackboard-main blockquote{
     padding-left: 10px;
     border-left: 3px solid #ccc;
@@ -85,7 +97,6 @@
     border-right: none;
 }
 .blackboard-main table th{
-    
     font: normal 24px/24px KaiTi,STKaiti;
     text-align: center;
 }
@@ -96,13 +107,31 @@
     padding: 10px;
     min-width: 90px;
 }
+.blackboard-main pre{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    background: transparent;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+}
 .blackboard-main code{
     display: inline-block;
-    width: 95%;
+    width: 100%;
     text-align: left;
     margin: 5px 0;
     padding: 5px 5px;
     font: normal 18px/18px sans-serif;
+}
+.blackboard-main img{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    padding: 0;
 }
 .blackboard-body{
     width: 90%;
@@ -153,9 +182,57 @@
 .ant-anchor-link-title{
     display: inline-block;
     height: 16px;
-    font-size: 14px;
-    line-height: 15px;
+    font-size: 16px;
+    line-height: 16px;
 }
 .ant-anchor-link{
-    background-color: rgba(255, 255, 255, 0.15);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
+.ant-anchor-link .ant-anchor-link{
+    background-color: transparent;
+}
+
+/* iphone4s */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .blackboard-title h1{
+        font-family: fenbi;
+        font-size: 32px;
+        line-height: 32px;
+
+    }
+    .blackboard-main h2,
+    .blackboard-main h3,
+    .blackboard-main h4,
+    .blackboard-main h5,
+    .blackboard-main h6{
+        font-family: STKaiti,KaiTi;
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .blackboard-body p{
+        padding: 0;
+        font: normal 20px/20px KaiTi,STKaiti;
+    }
+    .blackboard-main ul li{
+        font: normal 20px/20px KaiTi,STKaiti;
+    }
+    .blackboard-main table th{
+        font: normal 22px/22px KaiTi,STKaiti;
+        text-align: center;
+    }
+    .blackboard-main table td{
+        font: normal 20px/20px KaiTi,STKaiti;
+        text-align: left;
+        height: auto;
+        padding: 10px;
+        min-width: 90px;
+    }
+    #backLink{
+        padding: 10px 0px 10px 15px;
+    }
+  }

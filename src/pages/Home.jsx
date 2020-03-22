@@ -36,11 +36,20 @@ function Home() {
             <Fragment>
                 <MyTitle title="邵莲的博客" />
                 <div className="topicBackgroundColor">
-                    <HeaderNav />
+                    
                     <BRouter>
+                        <Row
+                            type = "flex" 
+                            justify = "center" 
+                        >
+                            <Col xs={0} sm={0} md = {0} lg={18} xl={18} xxl={18}>
+                                    <HeaderNav />
+                            </Col>
+                        </Row>
                         <Row
                             type="flex"
                             justify="center" >
+                            
                             <Col
                                 className="center-box" xs={24} sm={24} md={18} lg={18} xl={18} xxl={18}>
                                 <Affix>
