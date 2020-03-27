@@ -8,7 +8,6 @@ import '../../style/commponent/blackboard.css';
 import { useLocation } from 'react-router-dom';
 import CONSTURL from '../../config/apiUrl';
 import Axios from 'axios';
-import { ArrowLeftOutlined } from '@ant-design/icons';
 
 // 详细笔记页面，主题是黑板
 function DetailNote(){

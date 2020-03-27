@@ -1,24 +1,39 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Carousel, Row, Col } from 'antd';
+import { Link } from 'react-router-dom';
 import '../../style/commponent/common.css';
 import '../../style/commponent/indexList.css';
 import '../../style/pages/home.css';
-import { FetchesAllArticlesContext } from '../../pages/Home';
-import axios from 'axios';
-import { RequestALLArticles, ReceiveAticlesInfos } from '../../store/getAllArticles/action';
-import CONSTURL from '../../config/apiUrl';
-import { Link } from 'react-router-dom';
-import { CalendarOutlined, FolderOutlined } from '@ant-design/icons';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
-
+import Axios from 'axios';
+import CONSTURL from '../../config/apiUrl';
 // 首页列表
 function IndexList(){
 
-    const ctx = useContext(FetchesAllArticlesContext);
-    const [reFetch]=useState(ctx.fetchesAllArticlesState.isFetching);
-    const [list, setList] = useState([]);
-    const [pn] = useState(1);
+    const [ isInitial, setIsInitial ] = useState(false);
+    const [ bannerList, setBannerList ] = useState([]);
+
+
+    useEffect(()=>{
+        if(isInitial === false){
+            loadBannerInfos();
+            setIsInitial(true);    
+        }
+    },[ isInitial ])
+
+    const loadBannerInfos = ()=>{
+        Axios({
+            url: CONSTURL.GET_ALL_BANNERS,
+            withCredentials: true
+        })
+        .then((res)=>{
+            console.log(res.data.banners)
+            setBannerList(res.data.banners);
+        })
+    }
+
 
     const renderer = new marked.Renderer();
 
@@ -41,52 +56,45 @@ function IndexList(){
         }
     });
 
-    useEffect(()=>{
-        ctx.dispatch(RequestALLArticles());
-        let url = CONSTURL.GET_ALL_ARTICLE + pn;
-        axios
-        .get(url)
-        .then(res => {
-            ctx.dispatch(ReceiveAticlesInfos(res));
-            setList(ctx.fetchesAllArticlesState.articleList);
-        });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[reFetch, pn])
-
-
+    const getCarouselChilds = ()=>{
+        return bannerList.map((item)=>{
+            return (
+                <Link
+                    key = { item.articleId } 
+                    to = { "/note/detail?id="+item.articleId } 
+                >
+                    <div className="index-banner-div" >
+                        <img className="index-banner-img" src={  item.imgName!==undefined?CONSTURL.SOURCE_PRE+item.imgName:'../../image/cat.png' } alt = { "图没了" } />
+                        <p className="index-banner-p">{ item.title }</p>                                
+                    </div>
+                </Link>
+            )
+       });
+    }
     return (
-        <div className="article-div">
-            {
-                list.map((item) => {
-                    return (
-                        <Link
-                            key = { item.typeId+item.tagName }
-                            to = { "/note?typeId="+item.typeId }>
-                            <div className = "article-body" >
-                                <div className="article-showdow"></div>
-                                <div className="article-title-div">
-                                    <div className="article-cell">
-                                        {/* <p className = "article-title">{ item.title }</p> */}
-                                        <p className = "article-tag">{ item.tagName }</p>
-                                    </div>
-                                </div>
-                                <div className="article-introduce-div">
-                                    <div className="article-cell">
-                                        <p 
-                                            className="article-introduce"
-                                            dangerouslySetInnerHTML = {{ __html: marked(item.introduce) }}
-                                        ></p>
-                                    </div>
-                                </div> 
-                                <div className = "article-icon-div">
-                                    <CalendarOutlined />&nbsp;&nbsp;{ item.addTime }&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <FolderOutlined />&nbsp;&nbsp;{ item.count }
-                                </div>
-                            </div>
-                        </Link>
-                    );
-                })
-            }
+        <div className = "index-main-div">
+            <div className = "index-top-div">
+                <Row justify="center">
+                    <Col xs={ 16 }  sm={ 16 }  md={ 12 } lg={ 12 } xl={ 12 }  xxl={ 10 }> 
+                        <Carousel
+                            effect = "scrollx" 
+                            autoplay = { true } 
+                        >
+                            {
+                                getCarouselChilds()
+                            }
+                        </Carousel>
+                    </Col>
+                    <Col xs={ 0 }  sm={ 0 }  md={ 8 } lg={ 8 } xl={ 8 }  xxl={ 7 }> 
+                        <div >
+
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+            <div className = "idnex-bottom-div">
+                
+            </div>
         </div>
     )
 }

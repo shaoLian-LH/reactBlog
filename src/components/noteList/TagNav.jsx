@@ -1,24 +1,40 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { FetchesAllArticlesContext } from '../../pages/Home';
+import React, { useState, useEffect } from 'react';
 import '../../style/commponent/tagNav.css';
 import { useLocation } from 'react-router-dom';
 import { Input } from "antd";
-
+import Axios from 'axios';
+import CONSTURL from '../../config/apiUrl';
 // 标签选取区与搜索栏
 function TagNav(props){
 
     // 获取Home组件创建的上下文，主要获取其中的Tag数组
-    const ctx = useContext(FetchesAllArticlesContext);
-    
     const location = useLocation();
-    const [ isFetching ] = useState(ctx.fetchesAllArticlesState.isFetching); 
+    const [ isInitial, setIsInitial ] = useState(false); 
     const [ tagList, setTagList ] = useState([]);
     const [ titleValue, setTitleValue ] = useState("");
     const [ selectedTag, setSelectedTag ] = useState();
 
     useEffect(()=>{
-        let tempList = ctx.fetchesAllArticlesState.articleList;
-        setTagList(tempList);
+        if( isInitial === false ){
+            loadTagDatas();
+            setIsInitial(true);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[ isInitial ])
+
+    const loadTagDatas=()=>{
+        Axios({
+            url: CONSTURL.GET_ARTICLES_BY_PARAMS+"s",
+            withCredentials: true
+        })
+        .then((res)=>{
+            let list = res.data.infos.list;
+            setTagList(list);
+            checkCurrentSelect();
+        })
+    }
+
+    const checkCurrentSelect = ()=>{
         // 根据路由判断此时的选择的Tag类型
         let search = location.search;
         let position = search.indexOf("typeId");
@@ -28,8 +44,8 @@ function TagNav(props){
             // 将字符转换为数字
             setSelectedTag(typeId-0);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[ isFetching ])
+    }
+
 
     const _selectedBtn=(e) =>{
         if( selectedTag !== e ){

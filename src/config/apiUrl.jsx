@@ -8,6 +8,10 @@ let CONSTURL = {
     GET_ARTICLES_BY_PARAMS : DEFAULT_PRE + "article",
     // 根据ID获取文章详细信息
     GET_ARTICLE_BY_ID : DEFAULT_PRE + "article/",
+    // 获取Banner栏
+    GET_ALL_BANNERS : DEFAULT_PRE + "banners",
+    // 资源前缀
+    SOURCE_PRE : "http://121.199.23.187:8090/static/images/article/",
 }
 
 export default CONSTURL;

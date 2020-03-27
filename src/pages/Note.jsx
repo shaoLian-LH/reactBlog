@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import MyTitle from '../components/otherComponents/CustomerTitle';
 import '../style/pages/note.css'
 import CommonNoteList from '../components/noteList/CommonNoteList';

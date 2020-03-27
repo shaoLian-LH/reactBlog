@@ -3,7 +3,6 @@ import '../style/commponent/mainmenu.css';
 import { Menu } from 'antd';
 import PathConfig from '../config/pathConfig';
 import { Link, useLocation } from 'react-router-dom';
-import { SettingOutlined, HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
 
 // 写死的导航菜单
 function MainMenu(){
@@ -39,40 +38,26 @@ function MainMenu(){
                         if(index !== menuList.length-1 && index !== 0){
                             return(
                                 <Menu.Item 
-                                    className='menu-item menu-medium' 
+                                    className='menu-medium' 
                                     key={ index } 
                                 >
                                     <Link 
                                         key = {PathConfig[index].path + index} 
                                         to = {PathConfig[index].path} 
                                     >
-                                        <SettingOutlined
-                                            className="myIcon" 
-                                        /> 
+                                        { PathConfig[index].Icon }
                                         { name }
                                     </Link>
                                 </Menu.Item>
                             )
-                        } else if(index === 0) {
-                            return(
-                                <Menu.Item  className='menu-item' key={ index }>
-                                    <Link 
-                                        key = {index} 
-                                        to = {PathConfig[index].path} 
-                                    >
-                                        <HomeOutlined className="myIcon" />
-                                        { name }
-                                    </Link> 
-                                </Menu.Item>
-                            )
                         } else {
                             return(
-                                <Menu.Item  className='menu-item' key={ index }>
+                                <Menu.Item  key={ index }>
                                     <Link 
                                         key = {index} 
                                         to = {PathConfig[index].path} 
                                     >
-                                        <AppstoreOutlined className="myIcon" />
+                                        { PathConfig[index].Icon }
                                         { name }
                                     </Link> 
                                 </Menu.Item>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Avatar } from 'antd';
-import cat from '../../image/cat.png';
 import '../../style/commponent/common.css';
 import { CSSTransition } from 'react-transition-group';
 import useTypewriter from "react-typewriter-hook";
@@ -26,7 +25,7 @@ function Author(){
                 </CSSTransition>
                 <div className = "author-div">
                     <div>
-                        <Avatar size={ 100 } src={ cat } shape />
+                        {/* <Avatar size={ 100 } src={ cat } shape /> */}
                         <p className = "common-text">邵莲</p>
                     </div>
                 </div>
