@@ -2,7 +2,7 @@
     position: relative;
     top: 0;
     left: 0;
-    background-image: url('../../image/navbackground.png');
+	background-image: url('../../image/navbackground.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;

@@ -1,41 +1,27 @@
-import React, { useState } from 'react';
-import { Avatar } from 'antd';
-import '../../style/commponent/common.css';
-import { CSSTransition } from 'react-transition-group';
-import useTypewriter from "react-typewriter-hook";
-const intro = '曾经是舰狗。一名软件工程前端方向的学生，以某舰改二立绘发色为主题色建的个人博客。这个网站以记录本人日常学习经验、踩过的坑和放期末作业为主。';
+import React from 'react';
+import '../../style/commponent/author.css';
+import { Row, Col } from 'antd';
+import kyaru from '../../image/kyaru.png';
+import Friend from './Friend';
 function Author(){
     
-    const [ isShow, changeIsShow ] = useState(false);
-    const [ myIntor, setMyIntro ] = useState('');
     return (
-        <div className = 'common-box'>
-            <div className = 'common-box-top'>
-                <p className = 'common-box-text'>简介</p>
-            </div>
-            <div id="authorMain"
-                onMouseOver = { ()=>{ changeIsShow(true); setMyIntro(intro); } } 
-                onMouseOut = { ()=>{ changeIsShow(false); } }
-                onMouseLeave = { ()=> { setMyIntro(''); } }
-            >
-                <CSSTransition in={isShow} timeout={2000} classNames="author-introduction">
-                    <div className="author-introduction"> 
-                        <p className="common-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ MagicWriter(myIntor) }</p>
+        <div className = "author-main-div">
+            <Row justify="center">
+                <Col xs={ 24 }  sm={ 24 }  md={ 16 } lg={ 16 } xl={ 14 }  xxl={ 14 }>
+                    <div className = "author-intro-div">
+                        <img className = "author-img" src={ kyaru } alt="凯露头.jpg"/>
+                        <p className = "author-name">邵莲</p>
+                        <p className = "author-intro">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;曾经是舰狗。一名软件工程专业前端方向的学生。这个网站以记录本人日常学习经验、踩过的坑和放作业为主。</p>
                     </div>
-                </CSSTransition>
-                <div className = "author-div">
-                    <div>
-                        {/* <Avatar size={ 100 } src={ cat } shape /> */}
-                        <p className = "common-text">邵莲</p>
+                    <div className = "friend-link-div">
+                        <Friend />
                     </div>
-                </div>
-            </div>
+                </Col>
+            </Row>           
         </div>
     );
-    function MagicWriter(word) {
-        const typing = useTypewriter(word)
-        return typing;
-    }
+   
 }
 
 export default Author;

@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 // 写死的导航菜单
 function MainMenu(){
 
-    const [ menuList ] = useState(['首页', '笔记', '工具箱']);
+    const [ menuList ] = useState(['首页', '笔记', '关于']);
     const [ selected, setSelected ] = useState("0");
     const location = useLocation();
     
