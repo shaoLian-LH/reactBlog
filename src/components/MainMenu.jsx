@@ -35,37 +35,21 @@ function MainMenu(){
                 >
                 {
                     menuList.map((name, index)=>{
-                        if(index !== menuList.length-1 && index !== 0){
-                            return(
-                                <Menu.Item 
-                                    className='menu-medium' 
-                                    key={ index } 
+                        return(
+                            <Menu.Item className = "my-custom-menu" key={ index }>
+                                <Link 
+                                    key = {index} 
+                                    to = {PathConfig[index].path} 
                                 >
-                                    <Link 
-                                        key = {PathConfig[index].path + index} 
-                                        to = {PathConfig[index].path} 
-                                    >
-                                        { PathConfig[index].Icon }
-                                        { name }
-                                    </Link>
-                                </Menu.Item>
-                            )
-                        } else {
-                            return(
-                                <Menu.Item  key={ index }>
-                                    <Link 
-                                        key = {index} 
-                                        to = {PathConfig[index].path} 
-                                    >
-                                        { PathConfig[index].Icon }
-                                        { name }
-                                    </Link> 
-                                </Menu.Item>
-                            )
-                        }
+                                    { PathConfig[index].Icon }
+                                    { name }
+                                </Link> 
+                            </Menu.Item>
+                        )
                     })
                 }
             </Menu>
+            <div className="break-div"></div>
         </div>
     );
 }

@@ -52,7 +52,7 @@
 }
 .note-title *{
     color: black;
-    font: bold 20px/20px aria;
+    font: bold 16px/20px aria;
     padding: 0 10px;
     text-align: center;
 }
@@ -61,8 +61,8 @@
     height: 25px;
     width: auto;
     margin-top: 10px;
-    font: normal 14px/20px aria;
-    background-color: rgba(107, 103, 97, 0.9);  
+    font: normal 12px/20px aria;
+    background-color: rgba(107, 103, 97, 0.7);  
     border-radius: 5px;
     color: #ECE3D5;
     padding: 2px 10px;
@@ -98,7 +98,7 @@
     width: 100%;
     height: 10%;
     text-align: center;
-    font: normal 16px/16px aria;
+    font: normal 14px/16px aria;
     z-index: 2;
     bottom: 0;
     right: 0;

@@ -1,10 +1,21 @@
+.index-main-div{
+    background: #EEE6DB;
+    height: auto;
+}
 .index-top-div{
-    margin-top: 5px;    
+    padding-top: 2px;
+    height: auto;
+}
+.idnex-bottom-div{
+    margin-top: 20px;
+    background: #EEE6DB;
+    min-height: 300px;
 }
 .index-banner-div{
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 999;
 }
 
 .index-banner-img{

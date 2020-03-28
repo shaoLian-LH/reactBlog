@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Input } from "antd";
 import Axios from 'axios';
 import CONSTURL from '../../config/apiUrl';
+import { FileSearchOutlined } from '@ant-design/icons';
 // 标签选取区与搜索栏
 function TagNav(props){
 
@@ -109,9 +110,6 @@ function TagNav(props){
 
     return (
         <div className = "tagNav-div">
-            <div className = "tagNav-title">
-                搜寻笔记
-            </div>
             <div className = "target-search-div">
                 <Input.Search 
                     value = { titleValue }

@@ -7,24 +7,35 @@
     height: 35px;
     width: auto;
     overflow: hidden;
-    border-bottom: solid 2px #887E79;
-    border-top: solid 2px #887E79;
-    background-color: #EEE6DB;
+    background-color: transparent;
     color: rgba(107, 103, 97, 0.85);
     line-height: 35px;
     font-weight: bold;
 }
-.menu-medium{
-    border-left: solid 0.1rem #887E79;
-    border-right: solid 0.1rem #887E79;
+.break-div{
+    height: 5px;
+    background-image: -webkit-linear-gradient(rgba(107, 103, 97, 0.7) 10%, #EEE6DB 90%);
+    background-image: -moz-linear-gradient(rgba(107, 103, 97, 0.7) 10%, #EEE6DB 90%);
+    background-image: linear-gradient(rgba(107, 103, 97, 0.7) 10%, #EEE6DB 90%);
+    background-image: -o-linear-gradient(rgba(107, 103, 97, 0.7) 10%, #EEE6DB 90%);
 }
+
 .ant-menu-horizontal, .ant-menu-item, .ant-menu-horizontal{
-    width: auto;
     height: 35px;    
     transition: all 0.5s linear;
+    background-color: transparent;
+    border-bottom: none;
+}
+.my-custom-menu{
+    width: 100px;
+    text-align: left;
+    margin-right: 5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #EEE6DB;
 }
 .ant-menu-item .anticon, .ant-menu-submenu-title .anticon{
-    margin-right: 10px;
+    margin-right: 5px;
     font-size: 16px;
     line-height: 35px;
 }

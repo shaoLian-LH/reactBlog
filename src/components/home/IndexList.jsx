@@ -9,6 +9,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 import Axios from 'axios';
 import CONSTURL from '../../config/apiUrl';
+import CurrentArticles from './CurrentArticles';
 // 首页列表
 function IndexList(){
 
@@ -29,7 +30,6 @@ function IndexList(){
             withCredentials: true
         })
         .then((res)=>{
-            console.log(res.data.banners)
             setBannerList(res.data.banners);
         })
     }
@@ -86,15 +86,17 @@ function IndexList(){
                         </Carousel>
                     </Col>
                     <Col xs={ 0 }  sm={ 0 }  md={ 8 } lg={ 8 } xl={ 8 }  xxl={ 7 }> 
-                        <div >
-
-                        </div>
+                        <CurrentArticles />
                     </Col>
                 </Row>
             </div>
-            <div className = "idnex-bottom-div">
-                
-            </div>
+            <Row justify="center">
+                <Col xs={ 16 }  sm={ 16 }  md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }> 
+                    <div className = "idnex-bottom-div">
+                        <CurrentArticles />
+                    </div>
+                </Col>
+            </Row>
         </div>
     )
 }

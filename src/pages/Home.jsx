@@ -5,7 +5,7 @@ import HeaderNav from '../components/home/HeaderNav';
 import '../style/commponent/common.css';
 import '../style/pages/home.css';
 import { BrowserRouter as BRouter, Route } from 'react-router-dom';
-import { Row, Col, Affix } from 'antd';
+import { Row, Col, BackTop } from 'antd';
 import PathConfig from '../config/pathConfig';
 import MyTitle from '../components/otherComponents/CustomerTitle';
 
@@ -28,12 +28,9 @@ function Home() {
                     <Row
                         type="flex"
                         justify="center" >
-                        
                         <Col
                             className="center-box" xs={24} sm={24} md={18} lg={18} xl={18} xxl={18}>
-                            <Affix>
-                                <MainMenu />
-                            </Affix>
+                            <MainMenu />
                             {
                                 PathConfig.map((value, index) => {
                                     return (
@@ -41,9 +38,10 @@ function Home() {
                                     );
                                 })
                             }
+                            
                         </Col>
                     </Row>
-                    
+                    <BackTop />
                 </BRouter>
                 <HomeFooter />
             </div>
