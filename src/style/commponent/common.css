@@ -6,6 +6,9 @@
 .common-box{
     position: relative;
 }
+.common-bottom{
+    bottom: 0;
+}
 a{
     text-decoration: none;
 }

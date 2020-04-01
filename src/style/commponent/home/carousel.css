@@ -1,0 +1,88 @@
+#carousel-main-div{
+    position: relative;
+    top: 65px;
+    left: 38px;
+    width: 280px;
+    height: 146px;
+    padding: 10px;
+    transform: rotate(340deg); 
+    -o-transform: rotate(340deg); 
+    -webkit-transform: rotate(340deg); 
+    -moz-transform: rotate(340deg); 
+    z-index: 1000;
+    background-image: linear-gradient(to bottom right, #C9C9C9 , #000000,#000000,#000000 );
+    border-radius: 10px;
+}
+.carousel-banner-div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.carousel-banner-img{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    max-height: 280px;
+}
+.carousel-banner-p{
+    display: block;
+    position: absolute;
+    height: 25px;
+    margin: 0;
+    width: auto;
+    left: 10px;
+    top: 95px;
+    z-index: 999;
+    background-image: linear-gradient( transparent, rgba(0,0,0,0.4), rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9) );
+    color: white;
+    font: bold 16px/25px Arial, Helvetica, sans-serif;
+}
+.ant-carousel{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.ant-carousel,.slick-dots{
+    width: 100%;
+    text-align: center;
+}
+.ant-carousel .slick-dots li.slick-active button{
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+}
+.slick-slider, .slick-initialized, .slick-list, .slick-track{
+    width: 100%;
+    height: 100%;
+}
+.slick-dots, .slick-dots-bottom{
+    background-image: linear-gradient( transparent,rgba(0,0,0,0.2),rgba(0,0,0,0.3),rgba(0,0,0,0.4),rgba(0,0,0,0.6), rgba(0,0,0,0.7) );
+}
+.ant-carousel .slick-dots li.slick-active{
+    width: 12px;
+}
+.ant-carousel .slick-dots li{
+    padding-top: 5px;
+    width: 12px;
+}
+.ant-carousel .slick-dots li button{
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+}
+.index-main-div ul{
+    position: relative;
+    height: 25px;
+    bottom: 0px;
+}
+.ant-carousel .slick-dots-bottom{
+    bottom: -3px;
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 980px) {
+  
+}

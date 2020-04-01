@@ -3,7 +3,7 @@ import '../../style/commponent/common.css';
 
 function HomeFooter(){
     return (
-        <div className = "common-center">
+        <div className = "common-center common-bottom">
             <p className = "common-small-text">邵莲的个人博客</p>
             <p className = "common-small-text">&copy;2020 Powered by reactjs</p>
             <p className = "common-small-text">

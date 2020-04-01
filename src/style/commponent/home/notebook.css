@@ -1,0 +1,15 @@
+#notebook-main-div{
+    position: absolute;
+    bottom: 68px;
+    left: 341px;
+    width: 317px;
+    height: 190px;
+    background-color: transparent;
+}
+#notebook-main-div img{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}

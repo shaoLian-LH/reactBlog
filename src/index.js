@@ -4,6 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './style/commponent/common.css';
-import Home from './pages/Home';
+import Main from './pages/Main';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
