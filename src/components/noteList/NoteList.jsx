@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../../style/commponent/common.css';
-import '../../style/commponent/noteList.css';
-import '../../style/pages/home.css';
 import { Link  } from 'react-router-dom';
-import { CalendarOutlined, FireOutlined, LoadingOutlined } from '@ant-design/icons';
+import { CalendarOutlined, LoadingOutlined } from '@ant-design/icons';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
@@ -37,7 +34,7 @@ function NoteList(props){
         setIsLoading(props.isReLoad);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ props ])
-    
+
     return (
         <div className="note-div">
          {   isLoading?(<div className="loading-div"><LoadingOutlined /></div>):
@@ -50,10 +47,10 @@ function NoteList(props){
                                 <div className="note-showdow"></div>
                                 <div className="note-title-div">
                                     <div className="note-cell">
+                                        <p className = "note-tag">{ item.tagName }</p>
                                         <p className = "note-title"
                                             dangerouslySetInnerHTML = {{ __html: marked(item.title) }}
                                         ></p>
-                                        <p className = "note-tag">{ item.tagName }</p>
                                     </div>
                                 </div>
                                 <div className="note-introduce-div">
@@ -66,7 +63,6 @@ function NoteList(props){
                                 </div> 
                                 <div className = "note-icon-div">
                                     <CalendarOutlined />&nbsp;&nbsp;{ item.addTime }&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <FireOutlined />&nbsp;&nbsp;{ item.fire }
                                 </div>
                             </div>
                         </Link>

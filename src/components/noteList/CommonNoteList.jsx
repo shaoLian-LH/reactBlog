@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import NoteList from './NoteList';
 import PageNav from '../listNav/PageNav';
 import TagNav from './TagNav';
-import { Row, Col } from 'antd';
 import { createBrowserHistory  } from 'history';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 import Axios from 'axios';
 import CONSTURL from '../../config/apiUrl';
+import '../../style/commponent/note/commonNoteList.css';
 // 该组件由两个子组件组成（NoteList与TagNav）
 function CommonNoteList(){
 
@@ -107,39 +107,20 @@ function CommonNoteList(){
     }
     
     return(
-            <Row 
-                type="flex"
-                justify="center" >
-                {/* 小屏幕时的搜索栏 */}
-                <Col xs={ 24 }  sm={ 24 } md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }>
-                    <TagNav 
-                        handlerClick = { reveiveChanged } 
-                        handlerClear = { handleClearChoice }
-                    />
-                </Col>
-                <Col xs={ 24 }  sm={ 24 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
-                    <div id="leftDiv">
-                        {/* 左侧的笔记列表 */}
-                        <NoteList
-                            list = { list } 
-                            isReLoad = { isReLoad }
-                        />
-                        <PageNav 
-                            pageList = { pageInfo }
-                            handleClick = { handleNext }
-                        />
-                    </div>
-                </Col>
-                <Col xs={ 0 }  sm={ 0 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
-                    <div id="rightDiv">
-                        {/* 右侧的搜索栏和Tag选取区 */}
-                        <TagNav 
-                            handlerClick = { reveiveChanged } 
-                            handlerClear = { handleClearChoice }
-                        />
-                    </div>
-                </Col>
-            </Row>
+        <div id="common-note-list-main-div">
+            <TagNav 
+                handlerClick = { reveiveChanged } 
+                handlerClear = { handleClearChoice }
+            />
+            <NoteList
+                list = { list } 
+                isReLoad = { isReLoad }
+            />
+            <PageNav 
+                pageList = { pageInfo }
+                handleClick = { handleNext }
+            />
+        </div>
     )
 }
 export default CommonNoteList;

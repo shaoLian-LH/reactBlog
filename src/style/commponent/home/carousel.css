@@ -1,9 +1,9 @@
 #carousel-main-div{
     position: relative;
-    top: 65px;
-    left: 38px;
-    width: 280px;
-    height: 146px;
+    top: 80px;
+    left: 50px;
+    width: 340px;
+    height: 166px;
     padding: 10px;
     transform: rotate(340deg); 
     -o-transform: rotate(340deg); 

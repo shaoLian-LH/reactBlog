@@ -49,22 +49,21 @@ function DetailNote(){
 
     // 根据路由获取文章ID并进行申请
     useEffect(()=>{
-        let search = location.search.substring(4);
-        let url = CONSTURL.GET_ARTICLE_BY_ID + search;
-        Axios
-        .get(url)
-        .then(res=>{
-            let data = res.data.data;
-            setHtmltitle(data.title);
-            setHtmlContext(data.content);
-        })
-        console.log()
+        // let search = location.search.substring(4);
+        // let url = CONSTURL.GET_ARTICLE_BY_ID + search;
+        // Axios
+        // .get(url)
+        // .then(res=>{
+        //     let data = res.data.data;
+        //     setHtmltitle(data.title);
+        //     setHtmlContext(data.content);
+        // })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ isInitial ])
     
     return (
         <Fragment>
-            <Row>
+            {/* <Row>
                 <Col xs={ 24 }  sm={ 24 }  md={ 18 } lg={ 18 } xl={ 18 }  xxl={ 18 }>
                 <div id="main-blackboard-box">
                     <div className='blackboard-main'>
@@ -93,7 +92,7 @@ function DetailNote(){
                 </div>
                 </Affix>
             </Col>
-            </Row>
+            </Row> */}
                   
         </Fragment>
     )

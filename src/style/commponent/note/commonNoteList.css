@@ -1,0 +1,8 @@
+#common-note-list-main-div{
+    position: relative;
+    width: 100%;
+    top: 26px;
+    height: 544px;
+    overflow: hidden;
+    background-color: rgba( 242, 242, 242, 0.8);
+}
