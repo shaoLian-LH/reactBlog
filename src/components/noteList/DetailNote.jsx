@@ -1,30 +1,29 @@
-import React,{ useState , Fragment, useEffect} from 'react';
-import { Row, Col, Affix } from 'antd';
+import React,{ useState , Fragment, useEffect, useContext} from 'react';
+import { Row, Col } from 'antd';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 import Tocify from '../otherComponents/tocify';
-import '../../style/commponent/blackboard.css';
-import { useLocation } from 'react-router-dom';
 import CONSTURL from '../../config/apiUrl';
 import Axios from 'axios';
-
+import Empty from '../../components/otherComponents/Empty';
+import { NoteArticleContext } from '../../pages/Note';
+import '../../style/commponent/note/detailNote.css';
 // 详细笔记页面，主题是黑板
 function DetailNote(){
+    const ctx = useContext(NoteArticleContext);
+
     // 判断当前页面是否为初次渲染
-    const [ isInitial ] = useState(false);
+    const [ articleId, setArticleId ] = useState('');
     // 将标题和内容的markdown标签进行解析与渲染
     const [ htmlTitle, setHtmltitle ] = useState("");
     const [ htmlContext, setHtmlContext ] = useState("");
-
-    // 获取路由
-    const location = useLocation();
     // 别人写的导航插件
     const tocify = new Tocify();
     const renderer = new marked.Renderer();
 
-
     renderer.heading = function (text, level, raw){
+        tocify.setContainer('detail-note-main-div');
         const anchor = tocify.add(text, level);
         return `<a id="${ anchor }" href="${ anchor }" class="anchor-fix"><h${level}>${ text }</h${level}></a>\n`;
     }
@@ -47,53 +46,59 @@ function DetailNote(){
         }
     });
 
-    // 根据路由获取文章ID并进行申请
     useEffect(()=>{
-        // let search = location.search.substring(4);
-        // let url = CONSTURL.GET_ARTICLE_BY_ID + search;
-        // Axios
-        // .get(url)
-        // .then(res=>{
-        //     let data = res.data.data;
-        //     setHtmltitle(data.title);
-        //     setHtmlContext(data.content);
-        // })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ isInitial ])
+        if( ctx.articleId.length !== 0 ){
+            loadArticle();
+            setArticleId(ctx.articleId);
+        }
+        // eslint-disable-next-line
+    },[ ctx.articleId ])
+
+    const loadArticle = ()=>{
+        Axios
+        .get(CONSTURL.GET_ARTICLE_BY_ID + ctx.articleId)
+        .then(res=>{
+            let data = res.data.data;
+            setHtmltitle(data.title);
+            setHtmlContext(data.content);
+        })
+    }
     
-    return (
-        <Fragment>
-            {/* <Row>
-                <Col xs={ 24 }  sm={ 24 }  md={ 18 } lg={ 18 } xl={ 18 }  xxl={ 18 }>
-                <div id="main-blackboard-box">
-                    <div className='blackboard-main'>
-                        <div className = 'blackboard-title'
+    const getDetailNote =()=>{
+        return (
+            <Row
+                justify = "center"
+            >
+                <Col xs={ 24 }  sm={ 24 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
+                    <div id='detail-note-main-div'>
+                        <div className = 'detail-note-title'
                             dangerouslySetInnerHTML = {{ __html : marked(htmlTitle) }}
                         >
-
                         </div>
                         <div 
-                            className='blackboard-body' 
+                            className='detail-note-body' 
                             dangerouslySetInnerHTML = {{ __html : marked(htmlContext) }}
                         >
-                            
                         </div>
-                        <div className='blackboard-bottom'></div>
                     </div>
-                </div>
-            </Col>
-            <Col xs={ 0 }  sm={ 0 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
-                <Affix
-                    offsetTop = { 50 }
-                >
-                <div className="detailed-nav comm-box">
-                    <div className="nav-tiitle">文章导航</div>
-                    { tocify && tocify.render() }
-                </div>
-                </Affix>
-            </Col>
-            </Row> */}
-                  
+                </Col>
+                <Col xs={ 0 }  sm={ 0 }  md={ 8 } lg={ 8 } xl={ 8 }  xxl={ 8 }>
+                    <div className="detailed-nav comm-box">
+                        <div className="nav-tiitle">文章导航</div>
+                        { tocify && tocify.render() }
+                    </div>
+                </Col>
+            </Row>
+        );
+    }
+
+    return (
+        <Fragment>
+            {
+                articleId.length === 0
+                    ? <Empty emptyTitle = "目前还未选择笔记呢" />
+                    : getDetailNote()
+            }
         </Fragment>
     )
 }

@@ -1,0 +1,233 @@
+*{
+    position: relative;
+}
+#backLink{
+    padding: 10px 0px 10px 0px;
+    margin: 5px 0;
+    position: relative;
+    text-align: left;
+    font: bold 16px/16px aria;
+    width: 100%;
+    transition: all 0.8s ease-out;
+    color: #6B6761;
+}
+#backLink:hover{
+    transform: scale(1);
+    color: rgba( 107, 103, 97, 0.8);
+}
+.ant-col 
+.ant-col-xs-24 
+.ant-col-sm-24 
+.ant-col-md-18 
+.ant-col-lg-18 
+.ant-col-xl-18 
+.ant-col-xxl-18{
+    text-align: center;
+}
+#detail-note-main-div{
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 999;
+    position: relative;
+    height: 544px;
+    width: 100%;
+    margin: 26px 10px;
+    text-align: center;
+    color: rgba( 116, 110, 103, 0.8);
+    overflow-x:hidden;
+    overflow-y:auto;
+    scrollbar-face-color:  rgba( 116, 110, 103, 0.4);/*移动滑块颜色*/
+    scrollbar-track-color: #ECE3D9;/*背景颜色*/
+    scrollbar-arrow-color: #ddd;/*箭头颜色*/
+}
+#detail-note-main-div::-webkit-scrollbar-track{
+    background-color: #ECE3D9;
+}
+#detail-note-main-div::-webkit-scrollbar{
+    border-radius: 5px;
+    width: 5px;
+    background-color: #ECE3D9;
+}
+#detail-note-main-div::-webkit-scrollbar-thumb{
+    background-color:  rgba( 116, 110, 103, 0.4);
+}
+.anchor-fix{
+    pointer-events: none;
+}
+.detail-note-title h1{
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: rgba( 116, 110, 103, 0.8);
+}
+#detail-note-main-div h2,
+#detail-note-main-div h3,
+#detail-note-main-div h4,
+#detail-note-main-div h5,
+#detail-note-main-div h6{
+    font-family: STKaiti,KaiTi;
+    font-size: 18px;
+    line-height: 18px;
+    color:rgba( 116, 110, 103, 0.8);
+}
+
+#detail-note-main-div blockquote{
+    padding-left: 10px;
+    border-left: 3px solid rgba( 116, 110, 103, 0.8);
+    background-color: transparent;
+}
+
+.detail-note-body p{
+    padding: 0;
+    font: normal 16px/16px KaiTi,STKaiti;
+}
+#detail-note-main-div ul li{
+    font: normal 16px/16px KaiTi,STKaiti;
+}
+#detail-note-main-div table{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 10px;
+}
+#detail-note-main-div table tr{
+    border-bottom: 2px solid rgba( 116, 110, 103, 0.8);
+}
+#detail-note-main-div table tr td:first-child{
+    color: rgba( 116, 110, 103, 0.8);
+}
+#detail-note-main-div table tr td{
+    border-right: solid 2px rgba( 116, 110, 103, 0.8);
+}
+#detail-note-main-div table tr td:last-child{
+    border-right: none;
+}
+#detail-note-main-div table th{
+    font: normal 18px/18px KaiTi,STKaiti;
+    text-align: center;
+}
+#detail-note-main-div table td{
+    font: normal 16px/16px KaiTi,STKaiti;
+    text-align: left;
+    height: auto;
+    padding: 10px;
+    min-width: 90px;
+}
+#detail-note-main-div pre{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    background: transparent;
+    border-top: solid 2px rgba( 116, 110, 103, 0.8);
+    border-bottom: solid 2px rgba( 116, 110, 103, 0.8);
+}
+#detail-note-main-div code{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+    padding: 5px 5px;
+    font: normal 16px/16px sans-serif;
+}
+#detail-note-main-div img{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    padding: 0;
+}
+.detail-note-body{
+    width: 90%;
+    height: auto;
+    display: block;
+    position: relative;
+    left: 5%;
+    text-align: left;
+    margin-bottom: 120px;
+}
+
+.comm-box{
+    background-color: transparent;
+    margin-left: .5rem;
+    padding:.3rem;
+    border-radius: .3rem;
+    border-bottom:1px solid rgba( 116, 110, 103, 0.8);
+}
+.ant-anchor{
+    background: transparent;
+}
+.ant-anchor-wrapper{
+    background: transparent;
+}
+.ant-anchor-ink{
+    background-color: transparent;
+}
+.ant-anchor-ink::before{
+    background-color: transparent;
+}
+.nav-tiitle{
+    display: inline-block;
+    height: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+}
+.ant-anchor-link-title{
+    display: inline-block;
+    height: 16px;
+    font-size: 16px;
+    line-height: 16px;
+}
+.ant-anchor-link{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.ant-anchor-link .ant-anchor-link{
+    background-color: transparent;
+}
+
+/* iphone4s */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .detail-note-title h1{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 32px;
+        line-height: 32px;
+
+    }
+    #detail-note-main-div h2,
+    #detail-note-main-div h3,
+    #detail-note-main-div h4,
+    #detail-note-main-div h5,
+    #detail-note-main-div h6{
+        font-family: STKaiti,KaiTi;
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .detail-note-body p{
+        padding: 0;
+        font: normal 20px/20px KaiTi,STKaiti;
+    }
+    #detail-note-main-div ul li{
+        font: normal 20px/20px KaiTi,STKaiti;
+    }
+    #detail-note-main-div table th{
+        font: normal 22px/22px KaiTi,STKaiti;
+        text-align: center;
+    }
+    #detail-note-main-div table td{
+        font: normal 20px/20px KaiTi,STKaiti;
+        text-align: left;
+        height: auto;
+        padding: 10px;
+        min-width: 90px;
+    }
+    #backLink{
+        padding: 10px 0px 10px 15px;
+    }
+  }

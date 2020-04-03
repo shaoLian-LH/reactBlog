@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link  } from 'react-router-dom';
 import { CalendarOutlined, LoadingOutlined } from '@ant-design/icons';
 import marked from 'marked';
 import hljs from 'highlight.js';
+import Empty from '../../components/otherComponents/Empty';
 import 'highlight.js/styles/monokai-sublime.css';
-
+import '../../style/commponent/note/noteList.css';
+import { NoteArticleContext } from '../../pages/Note';
 // 笔记列表
 function NoteList(props){
+    const ctx = useContext(NoteArticleContext);
     const [ list, setList ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
     const renderer = new marked.Renderer();
@@ -36,22 +39,25 @@ function NoteList(props){
     },[ props ])
 
     return (
-        <div className="note-div">
-         {   isLoading?(<div className="loading-div"><LoadingOutlined /></div>):
-                list.map((item) => {
+        <div id="note-list-main-div">
+         {   isLoading 
+             ? (<div className="loading-div"><LoadingOutlined /></div>)
+             : ( list.length === 0
+                ? <Empty />
+                : list.map((item) => {
                     return (
                         <Link
                             key = { item.id }
-                            to = { "/note/detail?id="+item.id }>
+                            to = { "/note/detail?id="+item.id } 
+                            onClick = { ()=>{ ctx.setArticleId(item.id) } }
+                            > 
                             <div className = "note-body" >
                                 <div className="note-showdow"></div>
                                 <div className="note-title-div">
-                                    <div className="note-cell">
-                                        <p className = "note-tag">{ item.tagName }</p>
-                                        <p className = "note-title"
-                                            dangerouslySetInnerHTML = {{ __html: marked(item.title) }}
-                                        ></p>
-                                    </div>
+                                    <p className = "note-tag">{ item.tagName }</p>
+                                    <p className = "note-title"
+                                        dangerouslySetInnerHTML = {{ __html: marked(item.title) }}
+                                    ></p>
                                 </div>
                                 <div className="note-introduce-div">
                                     <div className="note-cell">
@@ -67,7 +73,7 @@ function NoteList(props){
                             </div>
                         </Link>
                     );
-                })
+                })) 
             }
         </div>
     )

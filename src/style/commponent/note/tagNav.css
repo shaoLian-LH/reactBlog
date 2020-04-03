@@ -54,12 +54,15 @@
 .ant-menu-horizontal > .ant-menu-submenu-active, 
 .ant-menu-horizontal > .ant-menu-item-open, 
 .ant-menu-horizontal > .ant-menu-submenu-open, 
-.ant-menu-horizontal > .ant-menu-item-selected, 
 .ant-menu-horizontal > .ant-menu-submenu-selected,
 .table-cell-selected{
     opacity: 1;
     color: #ECE3D9;
     background-color: #746E67;
+    border-bottom: none;
+}
+.ant-menu-horizontal > .ant-menu-item-selected{
+    color: #ECE3D9;
     border-bottom: none;
 }
 .target-search-div{

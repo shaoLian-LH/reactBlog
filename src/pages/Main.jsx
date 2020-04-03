@@ -27,7 +27,6 @@ function Main(){
                             })
                         }
                     </BRouter>
-                    
                 </div>
             <HomeFooter />
         </Fragment>

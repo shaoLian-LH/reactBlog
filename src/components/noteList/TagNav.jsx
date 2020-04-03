@@ -6,6 +6,7 @@ import Axios from 'axios';
 import CONSTURL from '../../config/apiUrl';
 import { TagOutlined } from '@ant-design/icons';
 // 标签选取区与搜索栏
+const clearTagId = "POIEATALL";
 function TagNav(props){
 
     // 获取Home组件创建的上下文，主要获取其中的Tag数组
@@ -31,7 +32,7 @@ function TagNav(props){
         .then((res)=>{
             let list = [];
             let first = {
-                typeId: "poiEatAll",
+                typeId: clearTagId,
                 tagName: "ALL"
             }
             list.push(first);
@@ -55,10 +56,6 @@ function TagNav(props){
 
 
     const _selectedBtn=(e) =>{
-        if( e === "poiEatAll" ){
-            setSelectedTag(null);
-            return ;
-        }
         if( selectedTag !== e ){
             setSelectedTag(e);
         } else {
@@ -96,10 +93,16 @@ function TagNav(props){
                         return (
                             <Menu.Item
                                 key = { temp.typeId }
-                                className = { selectedTag === temp.typeId 
+                                className = { (selectedTag === temp.typeId && temp.typeId!==clearTagId) 
                                             ? "table-cell table-cell-selected"
                                             : "table-cell"  }
-                                onClick = { ()=>{ _selectedBtn(temp.typeId) } }
+                                onClick = { temp.typeId === clearTagId?()=>{ 
+                                            setSelectedTag(null)
+                                            setTitleValue('')
+                                            props.handlerClear()
+                                        }:()=>{
+                                            _selectedBtn(temp.typeId);
+                                        } }
                             >{ temp.tagName }
                             </Menu.Item>
                         )

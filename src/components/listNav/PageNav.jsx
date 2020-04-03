@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import '../../style/commponent/pageNav.css';
+import React, { useState,useEffect  } from 'react';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import '../../style/commponent/listNav/pageNav.css';
 
 // 页表组件，需要传入pageList与handleClick
 function PageNav( props ){
@@ -24,7 +23,7 @@ function PageNav( props ){
         let isLastPage = pageList.isLastPage;
         let pageNum = pageList.pageNum;
         if(!isFirstPage){
-            let newLi = (<li key={"poiPre"} className = "textLi" onClick = { ()=>{ props.handleClick("pre") } }>上一页</li>);
+            let newLi = (<li key={"poiPre"} className = "textLi" onClick = { ()=>{ props.handleClick("pre") } }><LeftOutlined /></li>);
             liArr.push(newLi);
         }
         for( let i = 0 ; i < length ; i++ ){
@@ -42,7 +41,7 @@ function PageNav( props ){
             }
         }
         if(!isLastPage){
-            let newLi = (<li key={"poiNext"} className = "textLi" onClick = { ()=>{ props.handleClick("next") } }>下一页</li>);
+            let newLi = (<li key={"poiNext"} className = "textLi" onClick = { ()=>{ props.handleClick("next") } }><RightOutlined /></li>);
             liArr.push(newLi);
         }
         return liArr;

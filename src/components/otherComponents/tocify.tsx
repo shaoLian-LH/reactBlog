@@ -15,14 +15,19 @@ export type TocItems = TocItem[]; // TOC目录树结构
 
 export default class Tocify {
   tocItems: TocItems = [];
-
+  targetContainer : HTMLElement | null | Window;
   index: number = 0;
 
   constructor() {
     this.tocItems = [];
     this.index = 0;
+    this.targetContainer = document.body;
   }
-
+  setContainer(target :string){
+    this.targetContainer = document.getElementById(target)===null
+                          ? document.body
+                          : document.getElementById(target);
+  }
   add(text: string, level: number) {
     const anchor = `toc${level}${++this.index}`;
     const item = { anchor, level, text };
@@ -71,7 +76,7 @@ export default class Tocify {
 
   render() {
     return (
-      <Anchor affix showInkInFixed targetOffset={ 60 }>
+      <Anchor getContainer = { ()=>this.targetContainer } affix = { false } showInkInFixed={ false } >
          {this.renderToc(this.tocItems)}
       </Anchor>
     );
