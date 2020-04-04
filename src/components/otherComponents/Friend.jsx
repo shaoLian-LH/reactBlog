@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/commponent/friend.css';
+import '../../style/commponent/otherComponents/friend.css';
 import { LinkOutlined } from '@ant-design/icons'
 function Friend(){
     return (

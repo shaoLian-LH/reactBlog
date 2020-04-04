@@ -9,7 +9,7 @@ import Axios from 'axios';
 import Empty from '../../components/otherComponents/Empty';
 import { NoteArticleContext } from '../../pages/Note';
 import '../../style/commponent/note/detailNote.css';
-// 详细笔记页面，主题是黑板
+// 详细笔记页面
 function DetailNote(){
     const ctx = useContext(NoteArticleContext);
 
@@ -83,8 +83,8 @@ function DetailNote(){
                     </div>
                 </Col>
                 <Col xs={ 0 }  sm={ 0 }  md={ 8 } lg={ 8 } xl={ 8 }  xxl={ 8 }>
-                    <div className="detailed-nav comm-box">
-                        <div className="nav-tiitle">文章导航</div>
+                    <div id="detailed-nav">
+                        <div className="nav-tiitle">笔记导航</div>
                         { tocify && tocify.render() }
                     </div>
                 </Col>

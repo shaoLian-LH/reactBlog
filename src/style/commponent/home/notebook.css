@@ -13,3 +13,27 @@
     height: 100%;
     background-color: transparent;
 }
+@media screen and (min-width: 1920px) {
+    #notebook-main-div{
+        bottom: 68px;
+        left: 620px;
+        width: 503px;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #notebook-main-div{
+        bottom: 68px;
+        left: 384px;
+        width: 305px;
+        height: 180px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #notebook-main-div{
+        bottom: 38px;
+        left: 334px;
+        width: 245px;
+        height: 155px;
+    }
+}

@@ -4,8 +4,8 @@ import '../style/pages/note.css'
 import CommonNoteList from '../components/noteList/CommonNoteList';
 import DetailNote from '../components/noteList/DetailNote';
 import { Row, Col } from 'antd';
-import { HomeOutlined } from '@ant-design/icons'
-import { Link, useLocation } from 'react-router-dom';  
+import { useLocation } from 'react-router-dom';  
+import BackIndexBtn from '../components/otherComponents/BackIndexBtn';
 export const NoteArticleContext = createContext(null);
 function Note(){
 
@@ -24,17 +24,8 @@ function Note(){
             <div id="note-main-div">
                 <Row 
                     justify="center">
-                    <Col xs={ 0 }  sm={ 0 }  md={ 2 } lg={ 2 } xl={ 2 }  xxl={ 2 }>
-                        <Link 
-                            key = "link-to-index" 
-                            to = "/"
-                        >
-                            <div 
-                                className = "back-to-index-btn"
-                                >
-                                <p><HomeOutlined /></p>
-                            </div>
-                        </Link>
+                    <Col xs={ 0 }  sm={ 2 }  md={ 2 } lg={ 2 } xl={ 2 }  xxl={ 2 }>
+                        <BackIndexBtn />
                     </Col>
                     <NoteArticleContext.Provider
                         value = {{
@@ -42,10 +33,10 @@ function Note(){
                             "setArticleId": setArticleId
                         }}
                     >
-                        <Col xs={ 0 }  sm={ 0 }  md={ 8 } lg={ 8 } xl={ 8 }  xxl={ 8 }>
+                        <Col xs={ 0 }  sm={ 7 }  md={ 7 } lg={ 7 } xl={ 7 }  xxl={ 7 }>
                             <CommonNoteList />
                         </Col>
-                        <Col xs={ 24 }  sm={ 24 }  md={ 14 } lg={ 14 } xl={ 14 }  xxl={ 14 }>
+                        <Col xs={ 0 }  sm={ 15 }  md={ 15 } lg={ 15 } xl={ 15 }  xxl={ 15 }>
                             <DetailNote />
                         </Col>
                     </NoteArticleContext.Provider>

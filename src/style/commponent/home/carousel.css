@@ -33,8 +33,8 @@
     height: 25px;
     margin: 0;
     width: auto;
-    left: 10px;
-    top: 95px;
+    left: 0px;
+    top: 117px;
     z-index: 999;
     background-image: linear-gradient( transparent, rgba(0,0,0,0.4), rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9) );
     color: white;
@@ -83,6 +83,62 @@
     margin: 0;
     padding: 0;
 }
-@media (max-width: 980px) {
-  
+@media screen and (min-width: 1920px) {
+    #carousel-main-div{
+        top: 108px;
+        left: 60px;
+        width: 480px;
+        height: 248px;
+        padding: 10px;
+    }
+    .carousel-banner-p{
+        height: 30px;
+        margin: 0;
+        width: auto;
+        left: 10px;
+        top: 190px;
+        font: bold 20px/30px Arial, Helvetica, sans-serif;
+    }
+    .ant-carousel .slick-dots-bottom{
+        bottom: 0px;
+        margin: 0;
+        padding: 0;
+    }
+    .ant-carousel .slick-dots li.slick-active button{
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+    }
+    .ant-carousel .slick-dots li.slick-active button{
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #carousel-main-div{
+        top: 68px;
+        left: 39px;
+        width: 320px;
+        height: 146px;
+    }
+    .carousel-banner-p{
+        height: 25px;
+        left: 0px;
+        top: 102px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #carousel-main-div{
+        top: 51px;
+        left: 39px;
+        width: 240px;
+        height: 126px;
+    }
+    .carousel-banner-p{
+        height: 20px;
+        left: 0px;
+        top: 80px;
+        font-size: 14px;
+    }
 }

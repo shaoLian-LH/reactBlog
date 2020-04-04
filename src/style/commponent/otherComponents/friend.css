@@ -1,4 +1,7 @@
 .friend-main-div{
+    position: absolute;
+    top: 100px;
+    left: 300px;
     text-align: left;
 }
 .friend-box-ul{

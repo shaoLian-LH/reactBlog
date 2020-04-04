@@ -13,3 +13,27 @@
     height: 100%;
     z-index: 1000;
 }
+@media screen and (min-width: 1920px) {
+    #coffee-main-div{
+        right: 204px;
+        bottom: 80px;
+        width: 118px;
+        height: 99px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #coffee-main-div{
+        right: 121px;
+        bottom: 80px;
+        width: 68px;
+        height: 56px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #coffee-main-div{
+        right: 81px;
+        bottom: 38px;
+        width: 54px;
+        height: 42px;
+    }
+}

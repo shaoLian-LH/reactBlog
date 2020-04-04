@@ -1,30 +1,36 @@
 #loading-main-div{
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: black;
     text-align: center;
     padding-top: 150px;
+    z-index: 999;
 }
 .loading-icon{
     position: relative;
     display: inline-block;
-    -webkit-animation: upDownAnimate 2s ease-in-out infinite;
-    animation: upDownAnimate 2s ease-in-out infinite;
+    -webkit-animation: upDownAnimate 2.5s ease-in-out infinite;
+    animation: upDownAnimate 2.5s ease-in-out infinite;
     z-index: 3;
 }
 .loading-water1 {
-    -webkit-animation: waterAnimate 2s ease-out infinite;
-    animation: waterAnimate 2s ease-out infinite;
-}			
-.loading-water1{
+    -webkit-animation: waterAnimate 2.2s ease-in-out infinite;
+    animation: waterAnimate 2.2s ease-in-out  infinite;
+}
+.loading-water2 {
+    -webkit-animation: waterAnimate 2.2s 1s ease-in-out  infinite;
+    animation: waterAnimate 2.2s 1s ease-in-out  infinite;
+}
+.loading-water1,.loading-water2{
     position: absolute;
-    left: 395px;
+    left: 520px;
     top: 170px;
     border: 1px solid transparent; 
     width: 160px;
     height: 40px;
-    
     background-image: -webkit-linear-gradient( 90deg,#20768E 10%, #0D313B 80%, #20768E 10%);
     background-image: -moz-linear-gradient( 90deg,#20768E 10%, #0D313B 80%, #20768E 10%);
     background-image: -o-linear-gradient( 90deg,#20768E 10%, #0D313B 80%, #20768E 10%);
@@ -34,7 +40,8 @@
     opacity: 0;
     border-radius: 50% / 50%;
 }
-.loading-water1::before{
+.loading-water1::before,
+.loading-water2::before{
     content: '';
     top: -5px;
     left: 0px;
@@ -45,7 +52,47 @@
     z-index: 2;
     border-radius: 50% / 50%;
 }
+@media screen and (min-width: 1920px) {
+    .loading-icon{
+        top: 120px;
+        height: 44px;
+    }
+    .loading-water1,.loading-water2{
+        left: 710px;
+        top: 288px;
+        width: 180px;
+        height: 60px;
+    }
+    .loading-water1::before,
+    .loading-water2::before{
+        width: 180px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .loading-water1,.loading-water2{
+        left: 420px;
+        top: 175px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .loading-water1,.loading-water2{
+        left: 321px;
+        top: 175px;
+    }
+}
 @keyframes upDownAnimate{
+    0% {
+        margin-top: 10px;
+    }
+    50% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 10px;
+    }
+}
+@-webkit-keyframes upDownAnimate {
     0% {
         margin-top: 10px;
     }
