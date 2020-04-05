@@ -1,11 +1,16 @@
 .author-main-div{
     position: relative;
-    width: 1145px;
-    height: 546px;
-    top: 26px;
-    left: 28px;
+    width: 1143px;
+    height: 543px; 
+    top: 27px;
+    left: 29px;
     background-color: rgba(243, 243, 245, 0.7);
+    animation: jumpIn 0.8s ease-out 0.1s 1;
+    -webkit-animation: jumpIn 0.8s ease-out 0.1s 1;
+    -o-animation: jumpIn 0.8s ease-out 0.1s 1;
+    -moz-animation: jumpIn 0.8s ease-out 0.1s 1;
 }
+
 .friend-link-div{
     position: absolute;
     top: 50px;
@@ -50,6 +55,38 @@
     position: absolute;
     left: 10px;
     top: -20px;
+}
+@keyframes jumpIn{
+    0%{
+        transform: scale3d(0.5, 0.6, 1);
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+@-webkit-keyframes jumpIn{
+    0%{
+        -webkit-transform: scale3d(0.5, 0.6, 1);
+    }
+    100%{
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+}
+@-o-keyframes jumpIn{
+    0%{
+        -o-transform: scale3d(0.5, 0.6, 1);
+    }
+    100%{
+        -o-transform: scale3d(1, 1, 1);
+    }
+}
+@-moz-keyframes jumpIn{
+    0%{
+        -moz-transform: scale3d(0.5, 0.6, 1);
+    }
+    100%{
+        -moz-transform: scale3d(1, 1, 1);
+    }
 }
 @media screen and (max-width: 1280px) {
     .author-main-div{

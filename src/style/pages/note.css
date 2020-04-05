@@ -4,9 +4,74 @@
     height: 100%;
     background-color: transparent;
     text-align: center;
+    animation: fadeIn 1.2s ease-out 1;
+    -webkit-animation: fadeIn 1.2s ease-out 1;
+    -o-animation: fadeIn 1.2s ease-out 1;
+    -moz-animation: fadeIn 1.2s ease-out 1;
 }
 .ant-row, .ant-row-center, .ant-col{
     position: relative;
     height: 100%;
     width: 100%;
+}
+/* iphone6/7/8 plus */
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+    #note-main-div{
+        width: 100%;
+        min-height: 600px;
+    }
+} 
+@media (min-device-height: 630px) 
+    and (max-device-height: 823px)
+    and (min-device-width: 375px)
+    and (max-device-width: 411px)  
+    and (-webkit-min-device-pixel-ratio:2){
+        #note-main-div{
+            width: 100%;
+            min-height: 600px;
+        }
+    }
+@keyframes fadeIn{
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn{
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-o-keyframes fadeIn{
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeIn{
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+    }
 }

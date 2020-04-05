@@ -37,3 +37,30 @@
         height: 155px;
     }
 }
+/* iphone6/7/8 plus */
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+    #notebook-main-div{
+        position: relative;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: auto;
+        margin-top: 100px;
+        background-color: transparent;
+    }
+} 
+@media (min-device-height: 630px) 
+    and (max-device-height: 823px)
+    and (min-device-width: 375px)
+    and (max-device-width: 411px)  
+    and (-webkit-min-device-pixel-ratio:2){
+        #notebook-main-div{
+            position: relative;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: auto;
+            margin-top: 100px;
+            background-color: transparent;
+        }
+} 

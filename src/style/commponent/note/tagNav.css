@@ -93,6 +93,9 @@
     box-shadow: none;
     color: rgba(107, 103, 97, 0.9);
 }
+.ant-input-affix-wrapper > input.ant-input{
+    text-indent: 5px;
+}
 .target-search-div .ant-input-search:hover,
 .target-search-div .ant-input-affix-wrapper:hover{
     border: 1px solid rgba(107, 103, 97, 0.6);
@@ -163,10 +166,3 @@
         font-size: 18px;
     }
 }
-/* iphone4s */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    
-  }

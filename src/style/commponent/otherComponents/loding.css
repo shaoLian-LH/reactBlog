@@ -14,15 +14,21 @@
     display: inline-block;
     -webkit-animation: upDownAnimate 2.5s ease-in-out infinite;
     animation: upDownAnimate 2.5s ease-in-out infinite;
+    -o-animation: upDownAnimate 2.5s ease-in-out infinite;
+    -moz-animation: upDownAnimate 2.5s ease-in-out infinite;
     z-index: 3;
 }
 .loading-water1 {
-    -webkit-animation: waterAnimate 2.2s ease-in-out infinite;
     animation: waterAnimate 2.2s ease-in-out  infinite;
+    -webkit-animation: waterAnimate 2.2s ease-in-out infinite;
+    -o-animation: waterAnimate 2.2s ease-in-out infinite;
+    -moz-animation: waterAnimate 2.2s ease-in-out infinite;
 }
 .loading-water2 {
-    -webkit-animation: waterAnimate 2.2s 1s ease-in-out  infinite;
     animation: waterAnimate 2.2s 1s ease-in-out  infinite;
+    -webkit-animation: waterAnimate 2.2s 1s ease-in-out  infinite;
+    -o-animation: waterAnimate 2.2s 1s ease-in-out  infinite;
+    -moz-animation: waterAnimate 2.2s 1s ease-in-out  infinite;
 }
 .loading-water1,.loading-water2{
     position: absolute;
@@ -103,6 +109,28 @@
         margin-top: 10px;
     }
 }
+@-o-keyframes upDownAnimate {
+    0% {
+        margin-top: 10px;
+    }
+    50% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 10px;
+    }
+}
+@-moz-keyframes upDownAnimate {
+    0% {
+        margin-top: 10px;
+    }
+    50% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 10px;
+    }
+}
 @keyframes waterAnimate {
     0% {
         -webkit-transform: scale(0);
@@ -116,6 +144,26 @@
     }
 }	
 @-webkit-keyframes waterAnimate {
+    0% {
+        -webkit-transform: scale(2);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(2);
+        opacity: 0;
+    }
+}
+@-o-keyframes waterAnimate {
+    0% {
+        -webkit-transform: scale(2);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(2);
+        opacity: 0;
+    }
+}
+@-moz-keyframes waterAnimate {
     0% {
         -webkit-transform: scale(2);
         opacity: 1;

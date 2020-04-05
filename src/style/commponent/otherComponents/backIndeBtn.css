@@ -65,3 +65,18 @@
         font-weight: bold;
     }
 }
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+    .back-to-index-btn{
+        display: block;
+        position: absolute;
+        background-color: #ECE3D9;
+        color: #6B6761;
+        top: 0px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.8s;
+        opacity: 0.6;
+    }
+} 

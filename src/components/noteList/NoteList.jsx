@@ -35,6 +35,7 @@ function NoteList(props){
     useEffect(()=>{
         setList(props.list);
         setIsLoading(props.isReLoad);
+        console.log(ctx.isChanged);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ props ])
 
@@ -49,7 +50,7 @@ function NoteList(props){
                         <Link
                             key = { item.id }
                             to = { "/note/detail?id="+item.id } 
-                            onClick = { ()=>{ ctx.setArticleId(item.id) } }
+                            onClick = { ()=>{ ctx.setArticleId(item.id); if(!ctx.isChanged){ ctx.setIsChanged(true) } } }
                             > 
                             <div className = "note-body" >
                                 <div className="note-showdow"></div>

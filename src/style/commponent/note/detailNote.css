@@ -39,7 +39,9 @@
     scrollbar-face-color:  rgba( 116, 110, 103, 0.4);/*移动滑块颜色*/
     scrollbar-track-color: #ECE3D9;/*背景颜色*/
     scrollbar-arrow-color: #ddd;/*箭头颜色*/
+    animation: jumpIn 1s ease-out 1;
 }
+
 #detail-note-main-div::-webkit-scrollbar-track{
     background-color: #ECE3D9;
 }
@@ -230,48 +232,18 @@ code span{
 #detailed-nav .ant-anchor-link{
     background-color: transparent;
 }
-/* iphone4s */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .detail-note-title h1{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 32px;
-        line-height: 32px;
-
+@keyframes jumpIn {
+    0% {
+        transform: scale(0.9);
     }
-    #detail-note-main-div h2,
-    #detail-note-main-div h3,
-    #detail-note-main-div h4,
-    #detail-note-main-div h5,
-    #detail-note-main-div h6{
-        font-family: STKaiti,KaiTi;
-        font-size: 26px;
-        line-height: 26px;
-    }
-    .detail-note-body p{
-        padding: 0;
-        font: normal 20px/20px KaiTi,STKaiti;
-    }
-    #detail-note-main-div ul li{
-        font: normal 20px/20px KaiTi,STKaiti;
-    }
-    #detail-note-main-div table th{
-        font: normal 22px/22px KaiTi,STKaiti;
-        text-align: center;
-    }
-    #detail-note-main-div table td{
-        font: normal 20px/20px KaiTi,STKaiti;
-        text-align: left;
-        height: auto;
-        padding: 10px;
-        min-width: 90px;
-    }
-    #backLink{
-        padding: 10px 0px 10px 15px;
+    100% {
+        transform: scale(1);
     }
 }
+
+
+
+
 
 @media screen and (min-width: 1920px) {
     #detailed-nav{
@@ -406,3 +378,20 @@ code span{
         font-size: 12px;
     }
 }
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+    #detail-note-main-div{
+        height: 605px;
+    }
+} 
+@media (min-device-height: 630px) 
+    and (max-device-height: 823px)
+    and (min-device-width: 375px)
+    and (max-device-width: 411px)  
+    and (-webkit-min-device-pixel-ratio:2){
+    #detail-note-main-div{
+        height: 605px;
+    }
+    .detail-note-disappear{
+        display: none;
+    }
+} 

@@ -50,6 +50,9 @@ function DetailNote(){
         if( ctx.articleId.length !== 0 ){
             loadArticle();
             setArticleId(ctx.articleId);
+            if(!ctx.isChanged){
+                ctx.setIsChanged(true);
+            }
         }
         // eslint-disable-next-line
     },[ ctx.articleId ])
@@ -70,7 +73,7 @@ function DetailNote(){
                 justify = "center"
             >
                 <Col xs={ 24 }  sm={ 24 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
-                    <div id='detail-note-main-div'>
+                    <div id='detail-note-main-div' className = { !ctx.isChanged?'detail-note-disappear':'detail-note-show' }>
                         <div className = 'detail-note-title'
                             dangerouslySetInnerHTML = {{ __html : marked(htmlTitle) }}
                         >
