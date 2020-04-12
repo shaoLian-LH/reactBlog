@@ -51,6 +51,10 @@ html, body{
         width: 100%;
         background-image: none;
     }
+    html,body{
+        background-image: none;
+        background-color: #ECE3D9;
+    }
 } 
 /* iphone6/7/8 */
 @media (min-device-height: 630px) 
@@ -64,5 +68,9 @@ html, body{
         min-height: 400px;
         width: 100%;
         background-image: none;
+    }
+    html,body{
+        background-image: none;
+        background-color: #ECE3D9;
     }
 } 

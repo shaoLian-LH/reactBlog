@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../style/commponent/note/tagNav.css';
 import { useLocation } from 'react-router-dom';
-import { Input, Menu } from "antd";
+import { Input, Menu, Dropdown, Button } from "antd";
 import Axios from 'axios';
 import CONSTURL from '../../config/apiUrl';
 import { TagOutlined } from '@ant-design/icons';
@@ -15,7 +15,7 @@ function TagNav(props){
     const [ tagList, setTagList ] = useState([]);
     const [ titleValue, setTitleValue ] = useState("");
     const [ selectedTag, setSelectedTag ] = useState();
-
+    const [ curTagName, setCurTagName ] = useState("All");
     useEffect(()=>{
         if( isInitial === false ){
             loadTagDatas();
@@ -82,43 +82,37 @@ function TagNav(props){
         }
         return url;
     }
-
-    const getMenu = ()=>{
-        return (
-            <Menu
-                mode = "horizontal" 
-                className = "tagNav-menu" >
-                {
-                    tagList.map((temp) => {
-                        return (
-                            <Menu.Item
-                                key = { temp.typeId }
-                                className = { (selectedTag === temp.typeId && temp.typeId!==clearTagId) 
-                                            ? "table-cell table-cell-selected"
-                                            : "table-cell"  }
-                                onClick = { temp.typeId === clearTagId?()=>{ 
-                                            setSelectedTag(null)
-                                            setTitleValue('')
-                                            props.handlerClear()
-                                        }:()=>{
-                                            _selectedBtn(temp.typeId);
-                                        } }
-                            >{ temp.tagName }
-                            </Menu.Item>
-                        )
-                    })
-                }
-            </Menu>
-        );
-    }
+    const getMenu = (
+        <Menu>
+            {
+                tagList.map((temp) => {
+                    return (
+                        <Menu.Item
+                            key = { temp.typeId }
+                            onClick = { temp.typeId === clearTagId?()=>{ 
+                                        setSelectedTag(null)
+                                        setTitleValue('')
+                                        setCurTagName("All")
+                                        props.handlerClear()
+                                    }:()=>{
+                                        setCurTagName(temp.tagName)
+                                        _selectedBtn(temp.typeId);
+                                    } }
+                        >{ temp.tagName }
+                        </Menu.Item>
+                    )
+                })
+            }
+        </Menu>
+    );
 
     return (
         <div className = "tagNav-div">
             <div className = "table-cell-div">
-                <TagOutlined className="tag-icon" />
-                {
-                    getMenu()
-                }
+                <TagOutlined className="tag-icon"/>
+                <Dropdown overlay={getMenu} placement="topCenter">
+                    <Button>{ curTagName }</Button> 
+                </Dropdown>
             </div>
             <div className = "target-search-div">
                 <Input.Search 

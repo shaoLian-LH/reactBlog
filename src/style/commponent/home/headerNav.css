@@ -1,0 +1,47 @@
+#header-nav{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    text-align: left;
+    background-color: rgba( 116, 110, 103, 0.5);
+}
+#header-nav::before{
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    filter: blur(8px);
+}
+.hader-p{
+    position: relative;
+    padding-top: 10px;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    color: #ECE3D9;
+    line-height: 40px;
+}
+/* iphone6/7/8 plus */
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+    #header-nav{
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+} 
+@media (min-device-height: 630px) 
+    and (max-device-height: 823px)
+    and (min-device-width: 375px)
+    and (max-device-width: 411px)  
+    and (-webkit-min-device-pixel-ratio:2){
+    #header-nav{
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+} 

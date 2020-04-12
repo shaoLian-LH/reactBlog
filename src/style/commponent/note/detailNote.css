@@ -381,6 +381,7 @@ code span{
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #detail-note-main-div{
         height: 605px;
+        background-color: #F2F3F5;
     }
 } 
 @media (min-device-height: 630px) 
@@ -390,6 +391,7 @@ code span{
     and (-webkit-min-device-pixel-ratio:2){
     #detail-note-main-div{
         height: 605px;
+        background-color: #F2F3F5;
     }
     .detail-note-disappear{
         display: none;

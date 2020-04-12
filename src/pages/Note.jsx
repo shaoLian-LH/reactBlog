@@ -15,8 +15,9 @@ function Note(){
     const [ isChanged, setIsChanged ] = useState(false);
     const location = useLocation();
     useEffect(()=>{
-        if(location.pathname.indexOf("detail") !== -1){
-            setArticleId(location.search.substr(4));
+        if(location.search.indexOf("detail") !== -1){
+            let id = location.search.split("&")[1].split("=")[1]
+            setArticleId(id);
         }
         // eslint-disable-next-line
     },[ articleId])
