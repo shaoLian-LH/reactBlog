@@ -88,6 +88,14 @@
         -moz-transform: scale3d(1, 1, 1);
     }
 }
+@media screen and (min-width: 1920px) {
+    .author-main-div{
+        width: 1524px;
+        height: 725px;
+        top: 36px;
+        left: 38px;
+    }
+}
 @media screen and (max-width: 1280px) {
     .author-main-div{
         width: 954px;

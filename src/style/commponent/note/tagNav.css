@@ -142,6 +142,7 @@
     color: #ECE3D9;
     background-color:#746E67;
     opacity: 0.4;
+    border-radius: 4px;
 }
 .ant-btn:hover,.ant-dropdown-trigger:hover,
 .ant-btn:active,.ant-dropdown-trigger:active{
