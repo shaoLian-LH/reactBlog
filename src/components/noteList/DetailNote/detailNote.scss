@@ -24,20 +24,7 @@
 .ant-col-xxl-18{
     text-align: center;
 }
-#detail-note-main-div{
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 999;
-    position: relative;
-    height: 544px;
-    width: auto;
-    min-width: 90%;
-    margin: 26px 10px;
-    text-align: center;
-    color: black;
-    overflow-x:hidden;
-    overflow-y:auto;
-    animation: jumpIn 1s ease-out 1;
-}
+
 
 #detail-note-main-div::-webkit-scrollbar{
     width: 5px;
@@ -61,107 +48,122 @@
 .hljs-string, .hljs-type, .hljs-built_in, .hljs-builtin-name, .hljs-selector-id, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-addition, .hljs-variable, .hljs-template-variable{
     color: black;
 }
+p > code{
+    display: inline-block;
+    padding: 2px 5px;
+    background-color: rgba( 116, 110, 103, 0.1);
+    color: #F6347A;
+    border-radius: 3px;
+}
 em > code {
     display: inline-block;
 }
-#detail-note-main-div h2,
-#detail-note-main-div h3,
-#detail-note-main-div h4,
-#detail-note-main-div h5,
-#detail-note-main-div h6{
-    font-family: STKaiti,KaiTi;
-    font-size: 18px;
-    line-height: 18px;
-    color:black;
-    font-weight: bold;
-}
-
-#detail-note-main-div blockquote{
-    padding-left: 10px;
-    border-left: 3px solid rgba( 116, 110, 103, 0.8);
-    background-color: transparent;
+#detail-note-main-div{
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 999;
+    position: relative;
+    height: 544px;
+    width: auto;
+    min-width: 90%;
+    margin: 26px 10px;
+    text-align: center;
+    color: black;
+    overflow-x:hidden;
+    overflow-y:auto;
+    animation: jumpIn 1s ease-out 1;
+    h2, h3, h4, h5, h6{
+        font-family: STKaiti,KaiTi;
+        font-size: 18px;
+        line-height: 18px;
+        color:black;
+        font-weight: bold;
+    }
+    blockquote{
+        padding-left: 10px;
+        border-left: 3px solid rgba( 116, 110, 103, 0.8);
+        background-color: transparent;
+    }
+    ul li{
+        font: normal 16px/30px KaiTi,STKaiti;
+        line-height: 150%;
+    }
+    table{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 2px 10px;
+    }
+    table tr{
+        border-bottom: 2px solid rgba( 116, 110, 103, 0.8);
+    }
+    table tr td:first-child{
+        color: rgba( 116, 110, 103, 0.8);
+    }
+    table tr td{
+        border-right: solid 2px rgba( 116, 110, 103, 0.8);
+    }
+    table tr td:last-child{
+        border-right: none;
+    }
+    table th{
+        font: normal 18px/18px KaiTi,STKaiti;
+        text-align: center;
+    }
+    table td{
+        font: normal 16px/16px KaiTi,STKaiti;
+        text-align: left;
+        height: auto;
+        padding: 10px;
+        min-width: 90px;
+    }
+    pre{
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 5px 10px;
+        margin: 5px 0;
+        background: transparent;
+        border-top: solid 2px rgba( 116, 110, 103, 0.8);
+        border-bottom: solid 2px rgba( 116, 110, 103, 0.8);
+    }
+    code{
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        width: auto;
+        text-align: left;
+        font-weight: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        overflow-y:hidden;
+    }
+    code::-webkit-scrollbar-track{
+        background-color: #ECE3D9;
+    }
+    code::-webkit-scrollbar{
+        border-radius: 5px;
+        width: 5px;
+        background-color: #ECE3D9;
+    }
+    code::-webkit-scrollbar-thumb{
+        background-color:  rgba( 116, 110, 103, 0.4);
+    }
+    img{
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 5px 0;
+        padding: 0;
+    }
 }
 
 .detail-note-body p{
     padding: 0;
-    font: normal 16px/16px KaiTi,STKaiti;
-    line-height: 130%;
-}
-#detail-note-main-div ul li{
-    font: normal 16px/16px KaiTi,STKaiti;
-    line-height: 150%;
-}
-#detail-note-main-div table{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 2px 10px;
-}
-#detail-note-main-div table tr{
-    border-bottom: 2px solid rgba( 116, 110, 103, 0.8);
-}
-#detail-note-main-div table tr td:first-child{
-    color: rgba( 116, 110, 103, 0.8);
-}
-#detail-note-main-div table tr td{
-    border-right: solid 2px rgba( 116, 110, 103, 0.8);
-}
-#detail-note-main-div table tr td:last-child{
-    border-right: none;
-}
-#detail-note-main-div table th{
-    font: normal 18px/18px KaiTi,STKaiti;
-    text-align: center;
-}
-#detail-note-main-div table td{
-    font: normal 16px/16px KaiTi,STKaiti;
-    text-align: left;
-    height: auto;
-    padding: 10px;
-    min-width: 90px;
-}
-#detail-note-main-div pre{
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    padding: 5px 10px;
-    margin: 5px 0;
-    background: transparent;
-    border-top: solid 2px rgba( 116, 110, 103, 0.8);
-    border-bottom: solid 2px rgba( 116, 110, 103, 0.8);
-}
-#detail-note-main-div code{
-    display: inline-block;
-    position: relative;
-    top: 5px;
-    width: auto;
-    text-align: left;
-    font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    overflow-y:hidden;
+    font: normal 16px/18px KaiTi,STKaiti;
 }
 code span{
     line-height: 150%;
-}
-#detail-note-main-div code::-webkit-scrollbar-track{
-    background-color: #ECE3D9;
-}
-#detail-note-main-div code::-webkit-scrollbar{
-    border-radius: 5px;
-    width: 5px;
-    background-color: #ECE3D9;
-}
-#detail-note-main-div code::-webkit-scrollbar-thumb{
-    background-color:  rgba( 116, 110, 103, 0.4);
-}
-#detail-note-main-div img{
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: 5px 0;
-    padding: 0;
 }
 .detail-note-body{
     width: 90%;
@@ -258,7 +260,7 @@ code span{
         font: normal 18px/18px KaiTi,STKaiti;
     }
     #detail-note-main-div ul li{
-        font: normal 18px/18px KaiTi,STKaiti;
+        font: normal 18px/30px KaiTi,STKaiti;
     }
     #detail-note-main-div table th{
         font: normal 18px/18px KaiTi,STKaiti;
@@ -266,9 +268,6 @@ code span{
     }
     #detail-note-main-div table td{
         font: normal 18px/18px KaiTi,STKaiti;
-    }
-    #detail-note-main-div code{
-        font: normal 16px/16px sans-serif;
     }
     .nav-tiitle{
         font-size: 18px;
@@ -302,7 +301,7 @@ code span{
         font: normal 14px/14px KaiTi,STKaiti;
     }
     #detail-note-main-div ul li{
-        font: normal 14px/14px KaiTi,STKaiti;
+        font: normal 14px/30px KaiTi,STKaiti;
     }
     #detail-note-main-div table th{
         font: normal 14px/14px KaiTi,STKaiti;
@@ -310,9 +309,6 @@ code span{
     }
     #detail-note-main-div table td{
         font: normal 14px/14px KaiTi,STKaiti;
-    }
-    #detail-note-main-div code{
-        font: normal 12px/12px sans-serif;
     }
     .nav-tiitle{
         font-size: 14px;
@@ -344,10 +340,13 @@ code span{
     }
     .detail-note-body p{
         padding: 0;
-        font: normal 14px/14px KaiTi,STKaiti;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        font-family: KaiTi;
     }
     #detail-note-main-div ul li{
-        font: normal 14px/14px KaiTi,STKaiti;
+        font: normal 14px/22px KaiTi,STKaiti;
     }
     #detail-note-main-div table th{
         font: normal 14px/14px KaiTi,STKaiti;
@@ -356,9 +355,7 @@ code span{
     #detail-note-main-div table td{
         font: normal 14px/14px KaiTi,STKaiti;
     }
-    #detail-note-main-div code{
-        font: normal 12px/12px sans-serif;
-    }
+    
     .nav-tiitle{
         font-size: 14px;
     }
@@ -372,9 +369,9 @@ code span{
         background-color: #F2F3F5;
     }
 } 
-@media (min-device-height: 630px) 
+@media (min-device-height: 568px) 
     and (max-device-height: 823px)
-    and (min-device-width: 375px)
+    and (min-device-width: 320px)
     and (max-device-width: 411px)  
     and (-webkit-min-device-pixel-ratio:2){
     #detail-note-main-div{

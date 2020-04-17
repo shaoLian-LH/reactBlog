@@ -30,8 +30,7 @@ function Note(){
                 <HomeOutlined /> 首页
             </Breadcrumb.Item>
             <Breadcrumb.Item 
-                href='/note' 
-                onClick={ ()=>{ if(isChanged){ setIsChanged(false) } } }>
+                href='/note' >
                 <FileSearchOutlined /> 笔记栏
             </Breadcrumb.Item>
             {
