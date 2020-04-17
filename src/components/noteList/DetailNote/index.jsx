@@ -3,9 +3,9 @@ import { Row, Col } from 'antd';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
-import Tocify from '../../otherComponents/tocify';
-import CONSTURL from '../../../config/apiUrl';
-import Axios from 'axios';
+import Tocify from '../../../components/otherComponents/Tocify';
+import CONSTURL from '../../../config/Consturl';
+import Request from '../../../config/Request';
 import Empty from '../../otherComponents/Empty';
 import { NoteArticleContext } from '../../../pages/Note';
 import './detailNote.scss';
@@ -58,8 +58,7 @@ function DetailNote(){
     },[ ctx.articleId ])
 
     const loadArticle = ()=>{
-        Axios
-        .get(CONSTURL.GET_ARTICLE_BY_ID + ctx.articleId)
+        Request.get(CONSTURL.GET_ARTICLE_BY_ID + ctx.articleId)
         .then(res=>{
             let data = res.data.data;
             setHtmltitle(data.title);

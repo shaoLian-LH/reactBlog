@@ -85,9 +85,11 @@ em > code {
 .detail-note-body p{
     padding: 0;
     font: normal 16px/16px KaiTi,STKaiti;
+    line-height: 130%;
 }
 #detail-note-main-div ul li{
     font: normal 16px/16px KaiTi,STKaiti;
+    line-height: 150%;
 }
 #detail-note-main-div table{
     margin-top: 20px;
@@ -129,19 +131,15 @@ em > code {
 }
 #detail-note-main-div code{
     display: inline-block;
-    width: 100%;
+    position: relative;
+    top: 5px;
+    width: auto;
     text-align: left;
-    margin: 5px 0;
-    padding: 5px 5px;
     font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 14px;
-    overflow-x:auto;
+    line-height: 20px;
     overflow-y:hidden;
-    scrollbar-face-color:  rgba( 116, 110, 103, 0.4);/*移动滑块颜色*/
-    scrollbar-track-color: #ECE3D9;/*背景颜色*/
-    scrollbar-arrow-color: #ddd;/*箭头颜色*/
 }
 code span{
     line-height: 150%;

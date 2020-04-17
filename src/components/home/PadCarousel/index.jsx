@@ -1,29 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel } from 'antd';
+import { Carousel, message } from 'antd';
 import { Link } from 'react-router-dom';
 import './padCarousel.scss';
-import Axios from 'axios';
-import CONSTURL from '../../../config/apiUrl';
+import Request from '../../../config/Request';
+import CONSTURL from '../../../config/Consturl';
 // pad滚动列表
 function PadCarousel(){
 
     const [ isInitial, setIsInitial ] = useState(false);
     const [ bannerList, setBannerList ] = useState([]);
+    const [ tryNum, setTryNum ] = useState(0)
 
     useEffect(()=>{
         if(isInitial === false){
+            setIsInitial(true); 
             loadBannerInfos();
-            setIsInitial(true);    
         }
+        // eslint-disable-next-line
     },[ isInitial ])
 
     const loadBannerInfos = ()=>{
-        Axios({
-            url: CONSTURL.GET_ALL_BANNERS,
-            withCredentials: true
-        })
+        Request.get(CONSTURL.GET_ALL_BANNERS)
         .then((res)=>{
             setBannerList(res.data.banners);
+        },()=>{
+            setTryNum(tryNum+1)
+            if( tryNum < 3 ){
+                setIsInitial(false)
+            } else {
+                message.error("加载宣传图时出错")
+            }
         })
     }
 

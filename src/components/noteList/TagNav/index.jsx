@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './tagNav.scss';
 import { useLocation } from 'react-router-dom';
 import { Input, Menu, Dropdown, Button } from "antd";
-import Axios from 'axios';
-import CONSTURL from '../../../config/apiUrl';
+import CONSTURL from '../../../config/Consturl';
+import Request from '../../../config/Request';
 import { TagOutlined } from '@ant-design/icons';
 // 标签选取区与搜索栏
 const clearTagId = "POIEATALL";
@@ -25,10 +25,7 @@ function TagNav(props){
     },[ isInitial ])
 
     const loadTagDatas=()=>{
-        Axios({
-            url: CONSTURL.GET_ARTICLES_BY_PARAMS+"s",
-            withCredentials: true
-        })
+        Request.get(CONSTURL.GET_ARTICLES_BY_PARAMS+"s")
         .then((res)=>{
             let list = [];
             let first = {
