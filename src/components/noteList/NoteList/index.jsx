@@ -48,7 +48,7 @@ function NoteList(props){
                     return (
                         <Link
                             key = { item.id }
-                            to = { "/note?detail&id="+item.id } 
+                            to = { "/blog/note?detail&id="+item.id } 
                             onClick = { ()=>{ ctx.setArticleId(item.id); if(!ctx.isChanged){ ctx.setIsChanged(true);   } } }
                             > 
                             <div className = "note-body" >

@@ -1,4 +1,4 @@
-let DEFAULT_PRE = "http://121.199.23.187:8090/";
+let DEFAULT_PRE = "https://yuudachi.cn:444/";
 
 // 请求时的URL设置
 let CONSTURL = {
@@ -11,7 +11,7 @@ let CONSTURL = {
     // 获取Banner栏
     GET_ALL_BANNERS : DEFAULT_PRE + "banners",
     // 资源前缀
-    SOURCE_PRE : "http://121.199.23.187:8090/static/images/article/",
+    SOURCE_PRE : "https://yuudachi.cn:444/static/images/article/",
 }
 
 export default CONSTURL;

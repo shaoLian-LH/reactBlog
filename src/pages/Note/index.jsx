@@ -25,12 +25,12 @@ function Note(){
         return (
             <Breadcrumb>
             <Breadcrumb.Item 
-                href='/' 
+                href='/blog' 
                 onClick={ ()=>{ if(isChanged){ setIsChanged(false) } } }>
                 <HomeOutlined /> 首页
             </Breadcrumb.Item>
             <Breadcrumb.Item 
-                href='/note' >
+                href='/blog/note' >
                 <FileSearchOutlined /> 笔记栏
             </Breadcrumb.Item>
             {
