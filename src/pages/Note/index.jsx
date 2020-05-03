@@ -4,7 +4,7 @@ import './noetForPhone.scss';
 import './note.scss';
 import CommonNoteList from '../../components/noteList/CommonNoteList';
 import DetailNote from '../../components/noteList/DetailNote';
-import { Row, Col, Breadcrumb } from 'antd';
+import { Row, Col, Breadcrumb, BackTop } from 'antd';
 import { useLocation } from 'react-router-dom';  
 import BackIndexBtn from '../../components/otherComponents/BackIndexBtn';
 import { HomeOutlined, FileSearchOutlined, FileTextOutlined } from '@ant-design/icons';
@@ -78,6 +78,7 @@ function Note(){
                             </div>
                             <CommonNoteList />
                             <DetailNote />
+                            <BackTop />
                         </Col>
                     </Row>
                 </div>

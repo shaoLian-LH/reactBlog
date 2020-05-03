@@ -1,5 +1,4 @@
 import React from 'react';
-import book from '../../../static/image/book.png';
 import { Link } from 'react-router-dom';
 import './notebook.scss';
 function NoteBook(){
@@ -7,9 +6,16 @@ function NoteBook(){
         <div id = "notebook-main-div">
             <Link
                 key = "notebook" 
-                to = "/note"
+                to = "/blog/note"
             >
-                <img src={ book } alt="book" />
+                <div id="book">
+                    <div className = "cover">
+                        <h2><span>Note</span> Book</h2>
+                    </div>
+                    <div className = "writer">
+                        write by <b>shaoLian</b>
+                    </div>
+                </div>
             </Link>
         </div>
     )

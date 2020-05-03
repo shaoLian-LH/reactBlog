@@ -2,6 +2,7 @@ import React from 'react';
 import PadCarousel from '../../components/home/PadCarousel';
 import Coffee from '../../components/home/Coffee';
 import NoteBook from '../../components/home/NoteBook';
+import HomeFooter from '../../components/home/HomeFooter';
 import './home.scss';
 import { Row, Col } from 'antd';
 function Home(){
@@ -17,6 +18,7 @@ function Home(){
                     <PadCarousel />
                     <NoteBook />
                 </Col>
+                <HomeFooter />
             </Row>
         </div>
     )

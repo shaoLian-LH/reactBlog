@@ -18,6 +18,12 @@
     .empty-div{
         display: none;
     }
+    .ant-back-top{
+        right: 5px;
+        top: 70%;
+        z-index: 999;
+        position: fixed;
+    }
 } 
 @media (min-device-height: 568px) 
     and (max-device-height: 823px)
@@ -32,5 +38,11 @@
     }
     .empty-div{
         display: none;
+    }
+    .ant-back-top{
+        right: 5px;
+        top: 70%;
+        z-index: 999;
+        position: fixed;
     }
 } 

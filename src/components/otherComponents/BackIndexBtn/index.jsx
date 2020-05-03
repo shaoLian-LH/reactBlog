@@ -6,7 +6,7 @@ function BackIndexBtn(){
     return (
         <Link 
             key = "link-to-index" 
-            to = "/"
+            to = "/blog"
         >
             <div className = "back-to-index-btn">
                 <p><HomeOutlined /></p>

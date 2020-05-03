@@ -7,7 +7,7 @@ function Coffee(){
         <div id = "coffee-main-div">
             <Link
                 key = "about" 
-                to = "/about"
+                to = "/blog/about"
             >
             <img src={ coffee } alt="coffe"/>
             </Link>

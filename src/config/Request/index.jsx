@@ -1,5 +1,5 @@
 import axios from 'axios';
-let DEFAULT_PRE = "http://121.199.23.187:8090/";
+let DEFAULT_PRE = "https://yuudachi.cn:444/";
 const Request = {
     "get":"",
     "post":""
