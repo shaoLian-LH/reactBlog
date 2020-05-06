@@ -1,7 +1,7 @@
 #note-list-main-div{
     position: relative;
     width: 100%;
-    height: 424px;
+    height: calc(100% - 180px);
     background-color: transparent;
     overflow-x:hidden;
     overflow-y:auto;
@@ -24,9 +24,10 @@
 .note-body{
     position: relative;
     width: 100%;
-    height: 90px;
+    height: 120px;
     background-color: transparent;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: dotted 1px rgba( 116, 110, 103, 0.8);
 }
 .note-showdow{
     position: absolute;
@@ -38,20 +39,21 @@
     height: 100%;
 }
 .note-title-div{
-    height: 20px;
+    height: 25px;
     font-size: 12px;
     text-align: left;
     margin-left: 10px;
 }
 .note-tag, .note-title{
     display: inline-block;
+    font-size: 12px;
     margin-right: 10px;
 }
 .note-tag{
     width: auto;
     line-height: 20px;
     height: 20px;
-    padding: 0 5px;
+    padding: 0px 7px;
     border-radius: 5px;
     background-color: rgba( 116, 110, 103, 0.4);
     color: #ECE3D9;
@@ -63,8 +65,8 @@
     font-weight: bold;
 }
 .note-introduce-div{
-    height: 60px;
-    padding: 5px 0;
+    height: 75px;
+    padding: 5px 10px;
     overflow: hidden;
     text-align: left;
     font-size: 14px;
@@ -100,39 +102,33 @@
     color:rgba( 116, 110, 103, 0.6);
 }
 @media screen and (min-width: 1920px) {
-    #note-list-main-div{
-        width: 100%;
-        height: 572px;
-    }
     .note-title-div .note-title *{
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 18px;
     }
-    .note-tag{
-        font-size: 14px;
+    .note-title-div{
+        height: 30px;
+        line-height: 30px;
+        .note-tag{
+            font-size: 16px;
+        }
     }
-    .note-introduce-div{
-        height: 60px;
-        padding: 5px 0;
+    h4{
         font-size: 16px;
     }
     .note-icon-div{
-        height: 14px;
-        font-size: 14px;
-        line-height: 14px;
+        height: 16px;
+        font-size: 16px;
+        line-height: 16px;
     }
     #note-list-main-div .empty-p{
         font-size: 16px;
         line-height: 16px;
     }
     .note-body{
-        height: 100px;
+        height: 135px;
     }
 }
 @media screen and (max-width: 1280px) {
-    #note-list-main-div{
-        height: 338px;
-    }
     .note-title-div .note-title *{
         font-size: 12px;
         line-height: 20px;
@@ -159,9 +155,6 @@
     }
 }
 @media screen and (max-width: 1024px) {
-    #note-list-main-div{
-        height: 248px;
-    }
     .note-title-div .note-title *{
         font-size: 12px;
         line-height: 18px;
@@ -187,17 +180,23 @@
         height: 90px;
     }
 }
-@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
-    #note-list-main-div{
-        height: 505px;
+@media screen and (max-width: 800px) {
+    .note-title-div .note-title *{
+        font-size: 14px;
     }
-} 
-@media (min-device-height: 630px) 
-    and (max-device-height: 823px)
-    and (min-device-width: 375px)
-    and (max-device-width: 411px)  
-    and (-webkit-min-device-pixel-ratio:2){
-    #note-list-main-div{
-        height: 505px;
+    .note-tag{
+        font-size: 12px;
+        height: 20px;
     }
-} 
+    .note-title-div{
+        height: 60px;
+    }
+    .note-introduce-div{
+        height: 80px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .note-body{
+        height: 180px;
+    }
+}

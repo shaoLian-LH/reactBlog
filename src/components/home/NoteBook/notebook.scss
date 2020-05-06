@@ -1,7 +1,7 @@
 #notebook-main-div{
     position: absolute;
-    top: 150px;
-    left: 160px;
+    bottom: 220px;
+    left: 480px;
 }
 #book{
     position: relative;
@@ -10,7 +10,7 @@
     height: 165px;
     background-color: #E2DFCE;
     transform: rotate(-16.12deg) skewX(-3deg);
-    box-shadow: -18px 15px 5px rgba(0, 0, 0, 1);
+    box-shadow: -7px 18px 5px rgba(0, 0, 0, 1);
     transition: 0.5s;
     cursor: pointer;
     h2{
@@ -20,11 +20,6 @@
         font-size: 1em;
         line-height: 1em;
         /*color: #fff;*/
-    }
-    h2 span{
-        /* background-attachment: fixed;
-        background-clip: text;
-        -webkit-text-fill-color: transparent; */
     }
     .writer{
         position: absolute;
@@ -45,7 +40,6 @@
         left: -19px;
         width: calc(100% - 2px);
         height: 70%;
-        /* background: url(); */
         background-size: cover;
         h2{
             display: inline-block;
@@ -58,13 +52,12 @@
 }
 #book:hover{
     transform: rotate(-16.12deg) skewX(-3deg) translate(10px, -10px);
-    box-shadow: -18px 15px 5px rgba(0, 0, 0, 1);
+    box-shadow: -6px 19px 5px rgba(0, 0, 0, 1);
 }
 #book:hover .cover{
     text-shadow: 1px 0px 0px #8D5A45;
     transition: 0.5s;
 }
-/* 书的侧页 */
 #book:before{
     content: '';
     width: 11px;
@@ -86,15 +79,30 @@
     left: 0;
     transform: skewX(-39.5deg) translate( 5px, 12.5px);
 }
-// @media screen and (min-width: 1920px) {
-    
-// }
-// @media screen and (max-width: 1280px) {
-    
-// }
-// @media screen and (max-width: 1024px) {
-   
-// }
+@media screen and (max-width: 1280px) {
+    #book{
+        width: 110px;
+        height: 145px;
+        background-color: #E2DFCE;
+        transform: rotate(-16.12deg) skewX(-3deg);
+        box-shadow: -7px 18px 5px rgba(0, 0, 0, 1);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    #book:before{
+        content: '';
+        width: 11px;
+        height: 100%;
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 1);
+        transform: skewY(-50deg) translate( -58.5px, -63px);
+    }
+    #book::after{
+        content: '';
+        width: 100%;
+        height: 13px;
+        transform: skewX(-39.5deg) translate( 5px, 12.5px);
+    }
+}
 /* iphone6/7/8 plus */
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     

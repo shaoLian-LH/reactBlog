@@ -105,6 +105,7 @@ function TagNav(props){
 
     return (
         <div className = "tagNav-div">
+            <p className="tagNav-main-title">搜寻笔记</p>
             <div className = "table-cell-div">
                 <TagOutlined className="tag-icon"/>
                 <Dropdown overlay={getMenu} placement="topCenter">

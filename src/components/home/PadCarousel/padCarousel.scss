@@ -1,16 +1,17 @@
 #carousel-main-div{
     position: relative;
-    top: 35px;
-    left: calc(50% - 305px);
+    top: 85px;
+    left: 80px;
     width: 420px;
     height: 201px;
     padding: 10px;
-    // transform: rotate(340deg); 
-    // -o-transform: rotate(340deg); 
-    // -webkit-transform: rotate(340deg); 
-    // -moz-transform: rotate(340deg); 
+    transform: rotate(350deg); 
+    -o-transform: rotate(350deg); 
+    -webkit-transform: rotate(350deg); 
+    -moz-transform: rotate(350deg); 
     z-index: 1000;
-    background-image: linear-gradient(to bottom right, #C9C9C9 , #000000,#000000,#000000 );
+    background-image: linear-gradient(176deg, #C9C9C9 -15%, #000000,#000000,#000000 );
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.4); 
     border-radius: 10px;
 }
 .carousel-banner-div{
@@ -85,19 +86,22 @@
 }
 @media screen and (min-width: 1920px) {
     #carousel-main-div{
-        top: 108px;
-        left: 60px;
-        width: 480px;
-        height: 248px;
-        padding: 10px;
+        top: 160px;
+        left: 120px;
+        width: 470px;
+        height: 226px;
+        box-shadow: 5px 5px 6px rgba(0,0,0,0.4); 
+        border-radius: 10px;
     }
     .carousel-banner-p{
-        height: 30px;
-        margin: 0;
+        display: block;
+        position: absolute;
         width: auto;
-        left: 10px;
-        top: 190px;
-        font: bold 20px/30px Arial, Helvetica, sans-serif;
+        left: 0px;
+        height: 30px;
+        top: 172px;
+        z-index: 999;
+        font: bold 18px/30px Arial, Helvetica, sans-serif;
     }
     .ant-carousel .slick-dots-bottom{
         bottom: 0px;
@@ -115,33 +119,7 @@
         border-radius: 5px;
     }
 }
-@media screen and (max-width: 1280px) {
-    #carousel-main-div{
-        top: 68px;
-        left: 39px;
-        width: 320px;
-        height: 146px;
-    }
-    .carousel-banner-p{
-        height: 25px;
-        left: 0px;
-        top: 102px;
-    }
-}
-@media screen and (max-width: 1024px) {
-    #carousel-main-div{
-        top: 51px;
-        left: 39px;
-        width: 240px;
-        height: 126px;
-    }
-    .carousel-banner-p{
-        height: 20px;
-        left: 0px;
-        top: 80px;
-        font-size: 14px;
-    }
-}/* iphone6/7/8 plus */
+/* iphone6/7/8 plus */
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #carousel-main-div{
         position: relative;

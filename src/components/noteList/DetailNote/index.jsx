@@ -71,7 +71,7 @@ function DetailNote(){
             <Row
                 justify = "center"
             >
-                <Col xs={ 24 }  sm={ 24 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
+                <Col xs={ 24 }  sm={ 24 }  md={ 18 } lg={ 18 } xl={ 18 }  xxl={ 18 }>
                     <div id='detail-note-main-div' className = { !ctx.isChanged?'detail-note-disappear':'detail-note-show' }>
                         <div className = 'detail-note-title'
                             dangerouslySetInnerHTML = {{ __html : marked(htmlTitle) }}
@@ -84,7 +84,7 @@ function DetailNote(){
                         </div>
                     </div>
                 </Col>
-                <Col xs={ 0 }  sm={ 0 }  md={ 8 } lg={ 8 } xl={ 8 }  xxl={ 8 }>
+                <Col xs={ 0 }  sm={ 0 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
                     <div id="detailed-nav">
                         <div className="nav-tiitle">笔记导航</div>
                         { tocify && tocify.render() }

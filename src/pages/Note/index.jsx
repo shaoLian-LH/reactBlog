@@ -64,10 +64,10 @@ function Note(){
                         <Col xs={ 0 }  sm={ 2 }  md={ 2 } lg={ 2 } xl={ 2 }  xxl={ 2 }>
                             <BackIndexBtn />
                         </Col>
-                        <Col xs={ 0 }  sm={ 7 }  md={ 7 } lg={ 7 } xl={ 7 }  xxl={ 7 }>
+                        <Col xs={ 0 }  sm={ 6 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
                             <CommonNoteList />
                         </Col>
-                        <Col xs={ 0 }  sm={ 15 }  md={ 15 } lg={ 15 } xl={ 15 }  xxl={ 15 }>
+                        <Col xs={ 0 }  sm={ 16 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
                             <DetailNote />
                         </Col>
                         <Col xs={ 24 }  sm={ 0 }  md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }>

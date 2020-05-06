@@ -5,7 +5,6 @@ function Table(props){
 
     useEffect(()=>{
         getUl()
-        console.log(1)
     },[props])
 
     const getUl=()=>{

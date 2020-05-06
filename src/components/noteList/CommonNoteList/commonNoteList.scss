@@ -1,30 +1,11 @@
 #common-note-list-main-div{
     position: relative;
     width: 100%;
-    top: 26px;
-    height: 544px;
+    height: 100%;
     overflow: hidden;
     background-color: rgba( 242, 242, 242, 0.8);
 }
 
-@media screen and (min-width: 1920px) {
-    #common-note-list-main-div{
-        top: 35px;
-        height: 725px;
-    }
-}
-@media screen and (max-width: 1280px) {
-    #common-note-list-main-div{
-        top: 22px;
-        height: 453px;
-    }
-}
-@media screen and (max-width: 1024px) {
-    #common-note-list-main-div{
-        top: 17px;
-        height: 363px;
-    }
-}
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #common-note-list-main-div{
         position: relative;
