@@ -3,6 +3,7 @@ import PadCarousel from '../../components/home/PadCarousel';
 import NoteBook from '../../components/home/NoteBook';
 import HomeFooter from '../../components/home/HomeFooter';
 import TypeWriterPaper from '../../components/home/TypeWriterPaper';
+import MessageBoard from '../../components/home/MessageBoard';
 import './home.scss';
 import { Row, Col } from 'antd';
 function Home(){
@@ -13,6 +14,7 @@ function Home(){
                     <PadCarousel />
                     <TypeWriterPaper />
                     <NoteBook />
+                    <MessageBoard />
                 </Col>
                 <Col xs={ 24 }  sm={ 0 }  md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }>
                     <PadCarousel />
