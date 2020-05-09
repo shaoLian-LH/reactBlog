@@ -14,7 +14,17 @@ Request.get = (target)=>{
         }
     })
 }
-
+Request.post = (target, data) => {
+    return axios({
+        method: "post",
+        url: DEFAULT_PRE + target,
+        withCredentials: true,
+        data: data,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+}
 
 export default Request;
 

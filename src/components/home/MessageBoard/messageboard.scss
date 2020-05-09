@@ -1,8 +1,11 @@
-#notepaper-main-div {
+.notepaper-link{
     position: absolute;
-    display: flex;
     top: 80px;
     right: 190px;
+}
+#notepaper-main-div {
+    position: relative;
+    display: flex;
     flex-wrap: wrap;
     height: 210px;
     width: 370px;
@@ -11,6 +14,7 @@
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba( 0, 0, 0, 0.4);
     text-align: center;
+    cursor: pointer;
     .notepaper-hint {
         position: absolute;
         height: 20px;

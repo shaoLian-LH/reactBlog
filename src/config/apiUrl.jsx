@@ -10,6 +10,10 @@ let CONSTURL = {
     GET_ARTICLE_BY_ID : DEFAULT_PRE + "article/",
     // 获取Banner栏
     GET_ALL_BANNERS : DEFAULT_PRE + "banners",
+    // 获取评论
+    GET_ALL_COMMENTS : DEFAULT_PRE + "comments",
+    // 评论操作
+    COMMENTS_OPERATION : "comment",
     // 资源前缀
     SOURCE_PRE : "https://yuudachi.cn:444/static/images/article/",
 }

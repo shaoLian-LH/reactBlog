@@ -1,15 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './table.scss';
 import $ from 'jquery/dist/jquery';
-function Table(props){
+function Table(){
+
+    const [ isInitial, setIsInitial ] = useState(false);
+
 
     useEffect(()=>{
-        getUl()
-    },[props])
+        if( !isInitial ){
+            setIsInitial(true);
+            getUl();
+        }
+        window.addEventListener('resize',()=>{
+            getUl();
+        });
+        return (()=>{
+            window.removeEventListener('resize');
+        })
+        // eslint-disable-next-line
+    },[ ])
 
     const getUl=()=>{
         let curWidth = document.documentElement.clientWidth;
         let num = (curWidth - 100) / 45;
+        $('.table-ul').empty();
         for ( let i = 0; i < num; i++ ){
             let newLi = $("<li>");
             newLi.addClass('table-li');
