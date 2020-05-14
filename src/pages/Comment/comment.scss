@@ -1,10 +1,15 @@
+.comment-detail-content-div{
+    position: relative;
+    width: auto;
+    left: 1%;
+}
 #comment-main-div{
     position: relative;
     width: 80%;
     height: 70%;
     background: #f2f2f2;
     top: 15%;
-    left: 10%;
+    left: 8%;
     animation: flyFromTopRight ease-in 0.8s 1;
     background-color: rgba( 136, 100, 82, 0.9);
     border-radius: 20px;
@@ -31,16 +36,16 @@
     .comment-content-wrap-div::-webkit-scrollbar-thumb{
         background-color:  rgba( 116, 110, 103, 0.4);
     }
-    .comment-content-main-div{
-        -moz-column-count:5;
-        -webkit-column-count:5;
-        column-count:5;
-    }
+    // .comment-content-main-div{
+    //     -moz-column-count:5;
+    //     -webkit-column-count:5;
+    //     column-count:5;
+    // }
     
 }
 .comment-back-home-arrow-div{
     position: absolute;
-    left: 45px;
+    left: 25px;
     top: 45%;
     animation: fadeIn ease-out 0.8s 1;
 }
@@ -59,6 +64,11 @@
 }
 .comment-back-home-arrow:hover{
     box-shadow: 5px -5px 5px #f2f2f2;
+}
+.comment-page-component{
+    position: absolute;
+    right: 40px;
+    bottom: 120px;
 }
 
 @keyframes fadeIn{
@@ -211,44 +221,5 @@
         top: 15%;
         left: 10%;
         transform: rotate(0deg);
-    }
-}
-@media screen and (min-width: 1920px) {
-    .comment-content-main-div{
-        -moz-column-count:6;
-        -webkit-column-count:6;
-        column-count:6;
-    }
-}
-@media screen and (max-width: 1280px) {
-    .comment-content-main-div{
-        -moz-column-count:3;
-        -webkit-column-count:3;
-        column-count:3;
-    }
-}
-@media screen and (max-width: 1024px) {
-    .comment-content-main-div{
-        -moz-column-count:3;
-        -webkit-column-count:3;
-        column-count:3;
-    }
-}
-@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
-    .comment-content-main-div{
-        -moz-column-count:2;
-        -webkit-column-count:2;
-        column-count:2;
-    }
-} 
-@media (min-device-height: 568px) 
-    and (max-device-height: 823px)
-    and (min-device-width: 320px)
-    and (max-device-width: 411px)  
-    and (-webkit-min-device-pixel-ratio:2){
-    .comment-content-main-div{
-        -moz-column-count:2;
-        -webkit-column-count:2;
-        column-count:2;
     }
 }

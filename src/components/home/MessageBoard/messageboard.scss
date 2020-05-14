@@ -107,3 +107,10 @@
     border-radius: 50%;
     box-shadow: inset 1px 1px 4px rgba( 0, 0, 0, 0.4);
 }
+@media screen and (min-width: 1920px) {
+    .notepaper-link{
+        position: absolute;
+        top: 160px;
+        right: 210px;
+    }
+}
