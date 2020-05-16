@@ -11,10 +11,10 @@
         position: relative;
         width: 96%;
         left: 0;
-        padding: 5px 0;
         top: 26px;
-        height: auto;
-        overflow: hidden;
+        height: -webkit-calc(50% - 200px); 
+        height: calc( 50% - 200px );
+        overflow: scroll;
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 15px;
@@ -30,7 +30,6 @@
             position: relative;
             width: 96%;
             left: 0;
-            padding: 5px 0;
             top: 26px;
             height: auto;
             overflow: hidden;

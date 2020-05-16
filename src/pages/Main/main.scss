@@ -24,7 +24,6 @@ html, body{
 /* iphone6/7/8 plus */
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #blog-main-index-div{
-        margin: 20px 0;
         height: auto;
         min-height: 400px;
         width: 100%;
@@ -42,7 +41,6 @@ html, body{
     and (max-device-width: 411px)  
     and (-webkit-min-device-pixel-ratio:2){
     #blog-main-index-div{
-        margin: 20px 0;
         height: auto;
         min-height: 400px;
         width: 100%;

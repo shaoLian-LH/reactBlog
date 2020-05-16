@@ -4,6 +4,7 @@ import { BrowserRouter as BRouter, Route} from 'react-router-dom';
 import HeaderNav from '../../components/home/HeaderNav';
 import MyTitle from '../../components/otherComponents/CustomerTitle';
 import Table from '../../components/home/Table';
+import MainMenu from '../../components/otherComponents/MainMenu';
 import './main.scss';
 import { Row, Col } from 'antd';
 export const mainContext = createContext(null);
@@ -25,6 +26,7 @@ function Main(){
                                         );
                                     })
                                 }
+                                <MainMenu />
                             </BRouter>
                         </mainContext.Provider>
                     </div>

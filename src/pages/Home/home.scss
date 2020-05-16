@@ -9,3 +9,34 @@
     -o-animation: fadeIn 0.8s ease-out 1;
     -moz-animation: fadeIn 0.8s ease-out 1;
 }
+
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+    #home-main-div{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0px 20px;
+        z-index: 600;
+        animation: none;
+        -webkit-animation: none;
+        -o-animation: none;
+        -moz-animation: none;
+    }
+} 
+@media (min-device-height: 630px) 
+    and (max-device-height: 823px)
+    and (min-device-width: 375px)
+    and (max-device-width: 411px)  
+    and (-webkit-min-device-pixel-ratio:2){
+        #home-main-div{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0px 20px;
+            z-index: 600;
+            animation: none;
+            -webkit-animation: none;
+            -o-animation: none;
+            -moz-animation: none;
+        }
+} 

@@ -18,6 +18,7 @@
 /* iphone6/7/8 plus */
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #note-main-div{
+        padding: 0;
         width: 100%;
         min-height: 600px;
     }
@@ -28,6 +29,7 @@
     and (max-device-width: 411px)  
     and (-webkit-min-device-pixel-ratio:2){
         #note-main-div{
+            padding: 0;
             width: 100%;
             height: 600px;
             max-height: 75%;

@@ -8,26 +8,66 @@ import Empty from '../../components/otherComponents/Empty';
 import CommentCard from '../../components/comment/CommentCard';
 import Masonry from 'react-masonry-component';
 import AddComment from '../../components/otherComponents/AddComment';
+import $ from 'jquery';
 
-function Comment(){
+function Comment(props){
 
-    const [ isInitial, changeIsInitial ] = useState(false);
     const [ commentList, setCommentList ] = useState([]);
+    const [ pn, setPn ] = useState(1);
+    const [ getMore, setGetMore ] = useState(true);
+    // 是否还有数据
+    const [ isNull, setIsNull ] = useState(false);
     useEffect(()=>{
-        if(!isInitial){
-            changeIsInitial(true);
+        if( getMore && !isNull) {
+            setGetMore(false);
             fetchComments();
         }
-    },[ isInitial ])
+        if( !isNull ) {
+            listener();
+        }
+        // eslint-disable-next-line
+    },[ getMore ])
+
+    const listener = ()=>{
+        $('.comment-content-wrap-div').on("scroll",function(event){
+            let scrollHeight = this.scrollHeight;
+            let scrollTop = $(this).scrollTop();
+            let clientHeight = $(this).height();
+            if(scrollTop + clientHeight > scrollHeight - 30) {
+                if( !getMore ) {
+                    setGetMore(true);
+                }
+            }
+        });
+    }
 
     const fetchComments = ()=>{
-        Request.get(CONSTURL.COMMENTS_OPERATION+"/0")
+        let url = CONSTURL.COMMENTS_OPERATION 
+                + `/${props.targetArticle===undefined ? 0 : props.targetArticle}` 
+                + `?pn=${pn}`
+        Request.get(url)
         .then((res)=>{
-            let data = res.data;
-            setCommentList(data.comments);
+            let infos = res.data.infos;
+            if(infos !== undefined){
+                let newList = [ ...commentList, ...infos.list ];
+                setCommentList(newList);
+                if( !infos.hasNextPage ){
+                    setIsNull(true);
+                    $('.comment-content-wrap-div').off("scroll");
+                } else {
+                    let wrapHeight = $('.comment-content-wrap-div').height();
+                    let containerHeight = $('.comment-detail-content-div').height();
+                    if( wrapHeight > containerHeight ){
+                        console.log('needMore');
+                        setPn(pn+1);
+                        setGetMore(true);
+                    } else {
+                        setPn(pn+1);
+                    }
+                }
+            }
         },(error)=>{
-            console.log(error)
-            message.error("拉取评论信息失败")
+            message.error("拉取评论信息失败");
         })
     }
 
