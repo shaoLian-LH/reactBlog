@@ -343,6 +343,7 @@ code span{
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #detail-note-main-div{
         margin-top: 26px;
+        height: calc(100% - 26px);
         background-color: #F2F3F5;
     }
 } 

@@ -1,4 +1,4 @@
-import React, { Fragment, createContext} from 'react';
+import React, { Fragment } from 'react';
 import PathConfig from '../../config/PathConfig';
 import { BrowserRouter as BRouter, Route} from 'react-router-dom';
 import HeaderNav from '../../components/home/HeaderNav';
@@ -6,8 +6,8 @@ import MyTitle from '../../components/otherComponents/CustomerTitle';
 import Table from '../../components/home/Table';
 import MainMenu from '../../components/otherComponents/MainMenu';
 import './main.scss';
-import { Row, Col } from 'antd';
-export const mainContext = createContext(null);
+import { Row } from 'antd';
+
 function Main(){
     return (
         <Fragment>
@@ -15,22 +15,18 @@ function Main(){
             <Table />
             <Row>
                 <MyTitle title="邵莲的博客" />
-                <Col xs={ 24 }  sm={ 24 }  md={ 24 } lg={ 24 } xl={ 24 }  xxl={ 24 }>
-                    <div id="blog-main-index-div">
-                        <mainContext.Provider>
-                            <BRouter baseName="/blog">
-                                {
-                                    PathConfig.map((value, index) => {
-                                        return (
-                                            <Route key={index * index + index} path={value.path} exact={value.exact} component={value.component} />
-                                        );
-                                    })
-                                }
-                                <MainMenu />
-                            </BRouter>
-                        </mainContext.Provider>
-                    </div>
-                </Col>
+                <div id="blog-main-index-div">
+                    <BRouter baseName="/blog">
+                        {
+                            PathConfig.map((value, index) => {
+                                return (
+                                    <Route key={index * index + index} path={value.path} exact={value.exact} component={value.component} />
+                                );
+                            })
+                        }
+                        <MainMenu />
+                    </BRouter>
+                </div>
             </Row>
         </Fragment>
     )

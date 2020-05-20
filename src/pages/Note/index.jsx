@@ -4,15 +4,17 @@ import './noetForPhone.scss';
 import './note.scss';
 import CommonNoteList from '../../components/noteList/CommonNoteList';
 import DetailNote from '../../components/noteList/DetailNote';
-import { Row, Col, Breadcrumb, BackTop } from 'antd';
+import CommentBoard from '../../components/comment/CommentBoard';
+import { Row, Col, Breadcrumb } from 'antd';
 import { useLocation } from 'react-router-dom';  
-import BackIndexBtn from '../../components/otherComponents/BackIndexBtn';
 import { HomeOutlined, FileSearchOutlined, FileTextOutlined } from '@ant-design/icons';
+import LeftBottomMenu from '../../components/otherComponents/LeftBottonMenu';
 export const NoteArticleContext = createContext(null);
 function Note(){
 
     const [ articleId, setArticleId ] = useState('');
     const [ isChanged, setIsChanged ] = useState(false);
+    const [ wantComment, setWantComment ] = useState(false);
     const location = useLocation();
     useEffect(()=>{
         if(location.search.indexOf("detail") !== -1){
@@ -20,13 +22,13 @@ function Note(){
             setArticleId(id);
         }
         // eslint-disable-next-line
-    },[ articleId])
+    },[ articleId ])
     const getBread = ()=>{
         return (
             <Breadcrumb>
             <Breadcrumb.Item 
                 href='/blog' 
-                onClick={ ()=>{ if(isChanged){ setIsChanged(false) } } }>
+                /*onClick={ ()=>{ if(isChanged){ setIsChanged(false) } } }*/>
                 <HomeOutlined /> 首页
             </Breadcrumb.Item>
             <Breadcrumb.Item 
@@ -38,7 +40,7 @@ function Note(){
                 ?(
                     <Breadcrumb.Item 
                         href={ '/note/detail?id='+articleId  }
-                        onClick={ ()=>{ if(isChanged){ setIsChanged(false) } } }>
+                        /*onClick={ ()=>{ if(isChanged){ setIsChanged(false) } } }*/>
                         <FileTextOutlined /> 笔记
                     </Breadcrumb.Item>
                 )
@@ -47,6 +49,8 @@ function Note(){
         </Breadcrumb>
         )
     }
+
+
     return (
         <Fragment>
             <MyTitle title="邵莲的笔记" />
@@ -56,20 +60,31 @@ function Note(){
                     "setArticleId": setArticleId,
                     "isChanged": isChanged,
                     "setIsChanged": setIsChanged,
+                    "wantComment": wantComment,
+                    "setWantComment": setWantComment,
                 }}
             >
                 <div id="note-main-div">
                     <Row 
                         justify="center">
                         <Col xs={ 0 }  sm={ 2 }  md={ 2 } lg={ 2 } xl={ 2 }  xxl={ 2 }>
-                            <BackIndexBtn />
+                            <LeftBottomMenu />
                         </Col>
-                        <Col xs={ 0 }  sm={ 6 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
-                            <CommonNoteList />
-                        </Col>
-                        <Col xs={ 0 }  sm={ 16 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
-                            <DetailNote />
-                        </Col>
+                        {
+                            !wantComment 
+                            ?   <Fragment >
+                                    <Col xs={ 0 }  sm={ 6 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
+                                        <CommonNoteList />
+                                    </Col>
+                                    <Col xs={ 0 }  sm={ 16 }  md={ 16 } lg={ 16 } xl={ 16 }  xxl={ 16 }>
+                                        <DetailNote />
+                                    </Col>
+                                </Fragment>
+                            :   <Col xs={ 0 }  sm={ 22 }  md={ 22 } lg={ 22 } xl={ 22 }  xxl={ 22 }>
+                                    <CommentBoard />
+                                </Col>
+                        }
+                        
                         <Col xs={ 24 }  sm={ 0 }  md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }>
                             <div className = "bread-main-div">
                                 {
@@ -78,7 +93,6 @@ function Note(){
                             </div>
                             <CommonNoteList />
                             <DetailNote />
-                            <BackTop />
                         </Col>
                     </Row>
                 </div>

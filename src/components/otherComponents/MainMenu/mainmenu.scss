@@ -5,6 +5,7 @@
     bottom: 0px;
     height: 50px;
     text-align: center;
+    z-index: 999;
     .bottom-menu-item {
         top: 0;
         left: 0;
@@ -13,8 +14,8 @@
         display: inline-block;
         width: 50%;
         text-align: center;
-        background-color: rgba(141, 90, 69, 0.2);
-        color: rgba(141, 90, 69, 0.8);
+        background-color: #ECE3D9;
+        color: rgba(141, 90, 69, 1);
         .bottom-menu-item-icon {
             width: 100%;
             display: block;
@@ -33,11 +34,11 @@
         }
     }
     .bottom-menu-item-selected {
-        background-color: rgba(141, 90, 69, 0.8);
+        background-color: rgba(141, 90, 69, 1);
         color: #ECE3D9;
     }
     .bottom-menu-item:not(:last-child) {
-        border-right: 1px solid rgba(141, 90, 69, 0.8);
+        border-right: 1px solid rgba(141, 90, 69, 1);
     }
 }
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
@@ -45,9 +46,9 @@
         display: block;
     }
 } 
-@media (min-device-height: 630px) 
+@media (min-device-height: 568px) 
     and (max-device-height: 823px)
-    and (min-device-width: 375px)
+    and (min-device-width: 320px)
     and (max-device-width: 411px)  
     and (-webkit-min-device-pixel-ratio:2){
     #bottom-menu-main-div{

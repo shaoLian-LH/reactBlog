@@ -18,7 +18,7 @@ function DetailNote(){
     // 将标题和内容的markdown标签进行解析与渲染
     const [ htmlTitle, setHtmltitle ] = useState("");
     const [ htmlContext, setHtmlContext ] = useState("");
-    // 别人写的导航插件
+    // 导航插件
     const tocify = new Tocify();
     const renderer = new marked.Renderer();
 

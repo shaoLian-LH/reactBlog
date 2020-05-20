@@ -52,9 +52,9 @@
         display: none;
     }
 } 
-@media (min-device-height: 630px) 
+@media (min-device-height: 568px) 
     and (max-device-height: 823px)
-    and (min-device-width: 375px)
+    and (min-device-width: 320px)
     and (max-device-width: 411px)  
     and (-webkit-min-device-pixel-ratio:2){
     #table-main-div{

@@ -26,9 +26,12 @@ html, body{
     #blog-main-index-div{
         height: auto;
         min-height: 400px;
+        max-height: calc( 100% - 100px );
         width: 100%;
         background-image: none;
+        overflow: scroll;
     }
+    
     html,body{
         background-image: none;
         background-color: #ECE3D9;
@@ -43,6 +46,7 @@ html, body{
     #blog-main-index-div{
         height: auto;
         min-height: 400px;
+        max-height: calc( 100% - 100px );
         width: 100%;
         background-image: none;
     }
