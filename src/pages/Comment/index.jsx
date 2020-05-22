@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './comment.scss';
 import CommentBoard from '../../components/comment/CommentBoard';
-import AddComment from '../../components/otherComponents/AddComment';
+import AddComment from '../../components/comment/AddComment';
 
 function Comment(){
     

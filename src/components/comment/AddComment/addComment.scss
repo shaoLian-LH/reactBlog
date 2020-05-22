@@ -6,6 +6,7 @@ html {
     height: 100px;
     background: transparent;
     text-align: center;
+    z-index: 999;
 }
 .add-comment-paper{
     position: relative;
@@ -37,6 +38,7 @@ html {
 
 #add-comment-modal-main-div {
     position: absolute;
+    z-index: 999;
     top: 150px;
     left: calc( 50% - 130px);
     height: 375px;
@@ -147,6 +149,7 @@ html {
     height: 100%;
 }
 .modal-anime-enter, .modal-anime-appear {
+    z-index: 999;
     left: 46%;
     top: 48%;
     transform: rotate(10deg);
@@ -159,6 +162,7 @@ html {
     }
 }
 .modal-anime-enter-active, .modal-anime-appear-active { 
+    z-index: 999;
     opacity: 1;
     left: 0;
     top: 0;

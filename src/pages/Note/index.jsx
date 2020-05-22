@@ -5,6 +5,7 @@ import './note.scss';
 import CommonNoteList from '../../components/noteList/CommonNoteList';
 import DetailNote from '../../components/noteList/DetailNote';
 import CommentBoard from '../../components/comment/CommentBoard';
+import AddComment from '../../components/comment/AddComment';
 import { Row, Col, Breadcrumb } from 'antd';
 import { useLocation } from 'react-router-dom';  
 import { HomeOutlined, FileSearchOutlined, FileTextOutlined } from '@ant-design/icons';
@@ -17,7 +18,7 @@ function Note(){
     const [ wantComment, setWantComment ] = useState(false);
     const location = useLocation();
     useEffect(()=>{
-        if(location.search.indexOf("detail") !== -1){
+        if( location.search.indexOf("detail") !== -1 ){   
             let id = location.search.split("&")[1].split("=")[1]
             setArticleId(id);
         }
@@ -67,11 +68,14 @@ function Note(){
                 <div id="note-main-div">
                     <Row 
                         justify="center">
+                        <Col style = {{ "position":"absolute" }} xs={ 0 }  sm={ 0 }  md={ 24 } lg={ 24 } xl={ 24 }  xxl={ 24 }>
+                            <AddComment className = { "note-page-addComment-component" } articleId = { articleId }/>
+                        </Col>
                         <Col xs={ 0 }  sm={ 2 }  md={ 2 } lg={ 2 } xl={ 2 }  xxl={ 2 }>
                             <LeftBottomMenu />
                         </Col>
                         {
-                            !wantComment 
+                            ! wantComment 
                             ?   <Fragment >
                                     <Col xs={ 0 }  sm={ 6 }  md={ 6 } lg={ 6 } xl={ 6 }  xxl={ 6 }>
                                         <CommonNoteList />
@@ -81,10 +85,9 @@ function Note(){
                                     </Col>
                                 </Fragment>
                             :   <Col xs={ 0 }  sm={ 22 }  md={ 22 } lg={ 22 } xl={ 22 }  xxl={ 22 }>
-                                    <CommentBoard />
+                                    <CommentBoard className = "note-comment-board"/>
                                 </Col>
                         }
-                        
                         <Col xs={ 24 }  sm={ 0 }  md={ 0 } lg={ 0 } xl={ 0 }  xxl={ 0 }>
                             <div className = "bread-main-div">
                                 {

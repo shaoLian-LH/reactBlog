@@ -5,6 +5,7 @@ import { message } from 'antd';
 import Empty from '../../otherComponents/Empty';
 import CommentCard from '../CommentCard';
 import Masonry from 'react-masonry-component';
+import { useLocation } from 'react-router-dom';
 import $ from 'jquery';
 import './commentBoard.scss';
 function CommentBoard(props){
@@ -14,11 +15,16 @@ function CommentBoard(props){
     const [ getMore, setGetMore ] = useState(true);
     // 是否还有数据
     const [ isNull, setIsNull ] = useState(false);
+    const location = useLocation();
 
     useEffect(()=>{
         if( getMore && !isNull) {
+            let id = 0;
+            if( location.search.indexOf("id") !== -1 ){
+                id = location.search.split("=")[1];
+            }
             setGetMore(false);
-            fetchComments();
+            fetchComments(id);
         }
         if( !isNull ) {
             listener();
@@ -39,9 +45,9 @@ function CommentBoard(props){
         });
     }
 
-    const fetchComments = ()=>{
+    const fetchComments = (id)=>{
         let url = CONSTURL.COMMENTS_OPERATION 
-                + `/${props.targetArticle===undefined ? 0 : props.targetArticle}` 
+                + `/${id}` 
                 + `?pn=${pn}`
         Request.get(url)
         .then((res)=>{
@@ -76,7 +82,7 @@ function CommentBoard(props){
     };
 
     return (
-        <div id = "comment-main-div">
+        <div className = { props.className!==undefined ? `comment-main-div ${props.className}` : "comment-main-div" }>
             <div className = "comment-content-wrap-div">
                 <div className = "comment-content-main-div">
                     <Masonry className={ 'comment-detail-content-div' } elementType={'div'} options={ masonryOptios } >

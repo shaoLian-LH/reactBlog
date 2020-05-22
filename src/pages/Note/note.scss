@@ -10,6 +10,11 @@
     -o-animation: fadeIn 1.2s ease-out 1;
     -moz-animation: fadeIn 1.2s ease-out 1;
 }
+.note-page-addComment-component {
+    position: absolute;
+    right: 75px;
+    bottom: 60px;
+}
 .ant-row, .ant-row-center, .ant-col{
     position: relative;
     height: 100%;

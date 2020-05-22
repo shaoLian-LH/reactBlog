@@ -52,11 +52,11 @@ function AddComment(props){
                 "author" : nickName,
                 "email": email,
                 "verified":"0",
-                "preId":"0",
+                "preId":props.preId !== undefined ? props.preId : "0",
                 "originId":"",
                 "reply":"",
                 "addTime":"",
-                "articleId":""
+                "articleId":props.articleId !== undefined ? props.articleId : ""
             }
             Request.post(CONSTURL.COMMENT_OPERATION, dataProps)
             .then(()=>{
@@ -76,7 +76,7 @@ function AddComment(props){
     }
 
     const Modal = (
-        <div className = "add-comment-modal-backgroud-div">
+        <div className = { props.className !== undefined ? `add-comment-modal-backgroud-div ${props.className}`: "add-comment-modal-backgroud-div" }>
             <div id = "add-comment-modal-main-div">
                 <div className = "add-comment-modal-title">
                     New Comment （<SketchOutlined />-150）
@@ -105,7 +105,7 @@ function AddComment(props){
                             className = "modal-input" 
                             placeholder = "~邮箱，可以不填~" 
                             value = { email } 
-                            onChange = { (e) => { setEmail(e.target.value.replace(/s+/g, "")) } }
+                            onChange = { (e) => { setEmail(e.target.value.replace(/\s+/g, "")) } }
                         /><br />
                     </div>
                     <div className = "add-commnet-modal-line-div">

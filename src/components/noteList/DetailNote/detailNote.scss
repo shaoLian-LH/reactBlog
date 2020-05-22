@@ -60,7 +60,7 @@ em > code {
 }
 #detail-note-main-div{
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 999;
+    // z-index: 990;
     position: relative;
     height: 100%;
     width: auto;
@@ -70,7 +70,7 @@ em > code {
     color: black;
     overflow-x:hidden;
     overflow-y:auto;
-    animation: jumpIn 1s ease-out 1;
+
     h2, h3, h4, h5, h6{
         font-family: STKaiti,KaiTi;
         font-size: 18px;
