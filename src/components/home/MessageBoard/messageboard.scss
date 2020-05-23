@@ -1,7 +1,7 @@
 .notepaper-link{
     position: absolute;
     top: 80px;
-    right: 190px;
+    right: 275px;
 }
 #notepaper-main-div {
     position: relative;
@@ -10,7 +10,7 @@
     height: 210px;
     width: 370px;
     background-color: rgba( 136, 100, 82, 1);
-    transform: rotate(10deg);
+    transform: rotate(12deg);
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba( 0, 0, 0, 0.4);
     text-align: center;
@@ -48,6 +48,12 @@
     width: 45px;
     background-color: #f2f2f2;
     box-shadow: 4px 4px 10px rgba( 0, 0, 0, 0.4);
+}
+.notepaper:nth-of-type(odd) {
+    top: 11%;
+}
+.notepaper:nth-of-type(even) {
+    top: 9%;
 }
 .notepaper::after{
     content: '';
