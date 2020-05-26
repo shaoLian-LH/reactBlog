@@ -1,16 +1,37 @@
 .about-component-postcard-main-div {
     position: absolute;
-    padding: 20px;
+    padding: 10px 20px;
     min-width: 792px;
     min-height: 360px;
     left: calc(50% - 396px);
     top: calc(50% - 230px);
-    background-color: #f2f2f2;
+    background-color: #f1f1f1;
     display: flex;
     flex-wrap: wrap;
     animation: cardFlyIn ease-in-out 1.5s;
 }
-
+.about-postcard-title-div {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    height: 45px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba( 136, 100, 82, 0.8);
+    .about-postcard-title {
+        position: absolute;
+        left: 5px;
+    }
+    .about-postcard-icon {
+        position: absolute;
+        right: 5px;
+        cursor: pointer;
+        color: rgba( 136, 100, 82, 0.6);
+        &:hover {
+            color: rgba( 136, 100, 82, 1);
+        }
+    }
+}
 
 .friend-main-div{
     position: relative;
@@ -18,8 +39,22 @@
     top: 0px;
     left: 0px;
     text-align: left;
+    max-height: 300px;
+    overflow: scroll;
     animation: fadeIn ease-in 1.5s;
+    &::-webkit-scrollbar-track{
+        background-color: none;
+    }
+    &::-webkit-scrollbar{
+        width: 0px;
+        background-color: none;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color:  none;
+    }
     .friend-box-ul{
+        position: relative;
+        width: 100%;
         list-style-type: none;
         li{
             padding-left: 5px;
@@ -33,12 +68,53 @@
         color: rgb(107, 103, 97);
     }
     .friend-link{
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-right: 20px;
         color: rgba(107, 103, 97, 0.6);
+        transition: all ease-in-out 0.8s;
         &:hover, &:focus, &:visited {
             font-size: 14px;
             color: rgba(107, 103, 97, 0.9);
-        }   
+        }
+        .friend-img {
+            position: relative;
+            width: 180px;
+            height: 120px;
+        }
+        .friend-img-title-p {
+            position: absolute;
+            left: 10px;
+            bottom: -10px;
+            color: rgba( 136, 100, 82, 1);
+            font-weight: bold;
+            z-index: 999;
+        }
+        &::before {
+            content: '';
+            width: 150%;
+            height: 150%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color: rgba($color: #f2f2f2, $alpha: 0.2);
+            transition: all ease-in-out 0.8s;
+            z-index: 998;
+        }
+        &:hover::before {
+            content: '';
+            width: 150%;
+            height: 150%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color: rgba($color: #f2f2f2, $alpha: 0.6);
+            z-index: 998;
+        }
     }
+
 }
 
 .author-intro-div{
@@ -75,6 +151,7 @@
         color: rgba(107, 103, 97, 0.9);
     }
 }
+
 @keyframes cardFlyIn {
     0% {
         transform: rotate(8deg) scale(0.3);
@@ -108,6 +185,30 @@
     }
 }
 @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeIn {
     0% {
         opacity: 0;
     }

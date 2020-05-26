@@ -1,13 +1,15 @@
 #note-list-main-div{
     position: relative;
     width: 100%;
-    height: calc(100% - 180px);
-    background-color: transparent;
+    height: calc(100% - 160px);
+    background-color: #ECE3D9;
+    padding-bottom: 5px;
     overflow-x:hidden;
     overflow-y:auto;
     scrollbar-face-color:  rgba( 116, 110, 103, 0.4);/*移动滑块颜色*/
     scrollbar-track-color: #ECE3D9;/*背景颜色*/
     scrollbar-arrow-color: #ddd;/*箭头颜色*/
+    z-index: 2;
 }
 #note-list-main-div::-webkit-scrollbar-track{
     background-color: #ECE3D9;
@@ -24,7 +26,9 @@
 .note-body{
     position: relative;
     width: 100%;
-    height: 120px;
+    min-height: 120px;
+    max-height: 220px;
+    overflow: hidden;
     background-color: transparent;
     margin-bottom: 5px;
     border-bottom: dotted 1px rgba( 116, 110, 103, 0.8);
@@ -39,7 +43,7 @@
     height: 100%;
 }
 .note-title-div{
-    height: 25px;
+    height: 30px;
     font-size: 12px;
     text-align: left;
     margin-left: 10px;
@@ -48,14 +52,18 @@
     display: inline-block;
     font-size: 12px;
     margin-right: 10px;
+    * {
+        color: #886452;
+        line-height: 25px;
+    }
 }
 .note-tag{
     width: auto;
-    line-height: 20px;
-    height: 20px;
+    line-height: 25px;
+    height: 25px;
     padding: 0px 7px;
     border-radius: 5px;
-    background-color: rgba( 116, 110, 103, 0.4);
+    background-color: rgba( 136, 100, 82, 0.6);
     color: #ECE3D9;
 }
 .note-title-div .note-title *{
@@ -71,7 +79,10 @@
     text-align: left;
     font-size: 14px;
     text-indent: 2rem;
-    color:  rgba( 116, 110, 103, 0.6);
+    // color:  rgba( 116, 110, 103, 0.6);
+    * {
+        color: #886452;
+    }
 }
 .note-icon-div{
     text-align: left;
@@ -79,7 +90,8 @@
     height: 10px;
     font-size: 12px;
     line-height: 10px;
-    color:  rgba( 116, 110, 103, 0.6);
+    color:  #886452;
+    margin-bottom: 6px;
 }
 #note-list-main-div .empty-div{
     height: 180px;

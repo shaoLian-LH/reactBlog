@@ -52,7 +52,6 @@ function NoteList(props){
                             onClick = { ()=>{ ctx.setArticleId(item.id); if(!ctx.isChanged){ ctx.setIsChanged(true);   } } }
                             > 
                             <div className = "note-body" >
-                                <div className="note-showdow"></div>
                                 <div className="note-title-div">
                                     <p className = "note-tag">{ item.tagName }</p>
                                     <p className = "note-title"

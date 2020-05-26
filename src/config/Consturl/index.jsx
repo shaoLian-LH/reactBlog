@@ -10,6 +10,8 @@ let CONSTURL = {
     GET_ALL_BANNERS : "banners",
     // 获取Banner栏
     COMMENT_OPERATION : "comment",
+    // 获取友链信息
+    FRIEND_LINK_INFOS : "linkInfos",
     // 资源前缀
     SOURCE_PRE : "https://yuudachi.cn:444/static/images/article/",
 }

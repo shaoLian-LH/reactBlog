@@ -120,3 +120,8 @@
         right: 210px;
     }
 }
+@media screen and (max-width: 800px) {
+    #notepaper-main-div {
+        display: none;
+    }
+}

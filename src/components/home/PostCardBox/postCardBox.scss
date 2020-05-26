@@ -58,3 +58,8 @@
     transition: all ease-out 0.8s ;
     
 }
+@media screen and (max-width: 800px) {
+    .postcard-box-main-div {
+        display: none;
+    }
+} 

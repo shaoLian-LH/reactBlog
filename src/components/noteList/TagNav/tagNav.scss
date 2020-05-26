@@ -4,7 +4,7 @@
     width: 100%;
     height: 120px;
     position: relative;
-    background-color: transparent;
+    background-color: #ECE3D9;
     text-align: left;
     .tagNav-main-title{
         display: inline-block;
@@ -13,6 +13,7 @@
         height: 20px;
         font-size: 18px;
         font-weight: bold;
+        color: rgba( 136, 100, 82, 1);
     }
 }
 .tag-icon{
@@ -94,6 +95,8 @@
     border-bottom: none;
 }
 .target-search-div{
+    position: relative;
+    top: -1px;
     display: inline-block;
     width: 220px;
     text-align: left;
@@ -101,10 +104,13 @@
 .ant-input-affix-wrapper{
     position: relative;
     border-radius: 5px;
-    background-color: rgba(107, 103, 97, 0.1);
+    background-color: rgba( 136, 100, 82, 0.6);
     border: 1px solid transparent;
     box-shadow: none;
     color: rgba(107, 103, 97, 0.9);
+    svg {
+        color: #ECE3D9;
+    }
 }
 .ant-input-affix-wrapper > input.ant-input{
     text-indent: 5px;
@@ -147,14 +153,13 @@
 }
 .ant-btn,.ant-dropdown-trigger{
     color: #ECE3D9;
-    background-color:#746E67;
-    opacity: 0.4;
+    background-color:rgba( 136, 100, 82, 0.6);
     border-radius: 4px;
 }
 .ant-btn:hover,.ant-dropdown-trigger:hover,
 .ant-btn:active,.ant-dropdown-trigger:active{
     color: #ECE3D9;
-    background-color:#746E67;
+    background-color:rgba( 136, 100, 82, 1);
     opacity: 0.6;
 }
 @media screen and (min-width: 1920px) {

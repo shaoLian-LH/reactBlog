@@ -13,7 +13,7 @@ function NoteBook(){
                         <h2><span>Note</span> Book</h2>
                     </div>
                     <div className = "writer">
-                        write by <b>shaoLian</b>
+                        written by <b>shaoLian</b>
                     </div>
                 </div>
             </Link>

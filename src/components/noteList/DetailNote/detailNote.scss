@@ -59,7 +59,9 @@ em > code {
     display: inline-block;
 }
 #detail-note-main-div{
-    background-color: rgba(255, 255, 255, 0.8);
+    color: #886452;
+    background-color: #ECE3D9;
+    padding: 5px 10px;
     // z-index: 990;
     position: relative;
     height: 100%;
@@ -67,16 +69,20 @@ em > code {
     min-width: 90%;
     margin: 0px 10px;
     text-align: center;
-    color: black;
     overflow-x:hidden;
     overflow-y:auto;
-
+    
     h2, h3, h4, h5, h6{
         font-family: STKaiti,KaiTi;
         font-size: 18px;
         line-height: 18px;
         color:black;
         font-weight: bold;
+        pointer-events: none;
+    }
+    a[class*="anchor"] {
+        cursor: default;
+        pointer-events: none;
     }
     blockquote{
         padding-left: 10px;
@@ -124,6 +130,17 @@ em > code {
         background: transparent;
         border-top: solid 2px rgba( 116, 110, 103, 0.8);
         border-bottom: solid 2px rgba( 116, 110, 103, 0.8);
+        &::-webkit-scrollbar-track{
+            background-color: #ECE3D9;
+        }
+        &::-webkit-scrollbar{
+            border-radius: 5px;
+            width: 3px;
+            background-color: #ECE3D9;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color:  rgba( 116, 110, 103, 0.4);
+        }
     }
     code{
         display: inline-block;
@@ -136,17 +153,10 @@ em > code {
         font-size: 14px;
         line-height: 20px;
         overflow-y:hidden;
-    }
-    code::-webkit-scrollbar-track{
-        background-color: #ECE3D9;
-    }
-    code::-webkit-scrollbar{
-        border-radius: 5px;
-        width: 5px;
-        background-color: #ECE3D9;
-    }
-    code::-webkit-scrollbar-thumb{
-        background-color:  rgba( 116, 110, 103, 0.4);
+        span{
+            line-height: 150%;
+        }
+       
     }
     img{
         display: inline-block;
@@ -162,9 +172,6 @@ em > code {
     padding: 0;
     font: normal 16px/18px KaiTi,STKaiti;
 }
-code span{
-    line-height: 150%;
-}
 .detail-note-body{
     width: 90%;
     height: auto;
@@ -177,23 +184,20 @@ code span{
 
 #detailed-nav{
     position: relative;
-    background-color: rgba(255, 255, 255, 0.8);
+    color: #886452;
+    background-color: #ECE3D9;
     margin-right: 30px;
     text-align: left;
     border-bottom:1px solid rgba( 116, 110, 103, 0.8);
-}
-#detailed-nav .ant-anchor-wrapper{
-    overflow: hidden;
+    .ant-anchor-wrapper{
+        overflow: hidden;
+    }
+    .ant-anchor, .ant-anchor-wrapper, .ant-anchor-ink, .ant-anchor-ink::before, .ant-anchor-link .ant-anchor-link{
+        background: transparent;
+    }
 }
 
-#detailed-nav .ant-anchor,
-#detailed-nav .ant-anchor-wrapper,
-#detailed-nav .ant-anchor-ink,
-#detailed-nav .ant-anchor-ink::before,
-#detailed-nav .ant-anchor-link .ant-anchor-link
-{
-    background: transparent;
-}
+
 .ant-anchor-link .ant-anchor-link{
     padding-left: 5px;
     padding-top: 2px;
@@ -207,6 +211,11 @@ code span{
     font-size: 16px;
     line-height: 30px;
 }
+.ant-anchor-link-active > .ant-anchor-link-title {
+    color: #886452;
+    font-weight: bold;
+    
+}
 #detailed-nav .ant-anchor-link-title{
     display: inline-block;
     padding-left: 10px;
@@ -216,6 +225,10 @@ code span{
     white-space:normal;
     height: auto;
     line-height: 150%;
+    &:hover, &:focus {
+        color: #886452;
+        font-weight: bold;
+    }
 }
 .ant-anchor-link{
     height: auto;
