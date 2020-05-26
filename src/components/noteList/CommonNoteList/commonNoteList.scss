@@ -7,7 +7,7 @@
     background-color: #886452;
     box-shadow: inset 1px 1px 5px 2px rgba( 242, 242, 242, 0.45);
 }
-
+// iphone 6/7/8 plus
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
     #common-note-list-main-div{
         position: relative;
@@ -19,23 +19,19 @@
         overflow: scroll;
         margin-left: 10px;
         margin-right: 10px;
-        background-color: rgba( 242, 242, 242, 0.45);
+        // background-color: rgba( 242, 242, 242, 0.45);
     }
 } 
-@media (min-device-height: 630px) 
-    and (max-device-height: 823px)
-    and (min-device-width: 375px)
-    and (max-device-width: 411px)  
-    and (-webkit-min-device-pixel-ratio:2){
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){
         #common-note-list-main-div{
             position: relative;
             width: 96%;
             left: 0;
             top: 26px;
-            min-height: calc( 100% - 40px );
+            min-height: calc( 100% - 120px );
             overflow: scroll;
             margin-left: 10px;
             margin-right: 10px;
-            background-color: rgba( 242, 242, 242, 0.45);
+            // background-color: rgba( 242, 242, 242, 0.45);
         }
 } 
