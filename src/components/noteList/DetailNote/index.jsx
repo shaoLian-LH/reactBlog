@@ -16,6 +16,9 @@ function DetailNote(){
 
     // 判断当前页面是否为初次渲染
     const [ articleId, setArticleId ] = useState('');
+
+    const [ articleTitle, setArticleTitle ] = useState('');
+    const [ articleDesc, setArticleDesc ] = useState('');
     // 将标题和内容的markdown标签进行解析与渲染
     const [ htmlTitle, setHtmltitle ] = useState("");
     const [ htmlContext, setHtmlContext ] = useState("");
@@ -60,8 +63,10 @@ function DetailNote(){
 
     const loadArticle = ()=>{
         Request.get(CONSTURL.GET_ARTICLE_BY_ID + ctx.articleId)
-        .then(res=>{
+        .then((res)=>{
             let data = res.data.data;
+            setArticleTitle(data.title);
+            setArticleDesc(data.introduce);
             setHtmltitle(data.title);
             setHtmlContext(data.content);
         })
@@ -90,7 +95,11 @@ function DetailNote(){
                         <div className="nav-tiitle">笔记导航</div>
                         { tocify && tocify.render() }
                     </div>
-                    <Share />
+                    <Share 
+                        id = { articleId } 
+                        title = { articleTitle.slice(2).slice(0,-1) } 
+                        desc = { articleDesc.slice(5).slice(0,-1) } 
+                    />
                 </Col>
             </Row>
         );

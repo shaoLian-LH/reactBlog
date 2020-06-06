@@ -1,5 +1,5 @@
 'use strict';
-
+const version = new Date().getTime();
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
@@ -164,14 +164,14 @@ module.exports = function(webpackEnv) {
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
       filename: isEnvProduction
-        ? 'static/js/[name].[contenthash:8].js'
-        : isEnvDevelopment && 'static/js/bundle.js',
+        ? `static/js/[name]${version}.[contenthash:8].js`
+        : isEnvDevelopment && `static/js/bundle${version}.js`,
       // TODO: remove this when upgrading to webpack 5
       futureEmitAssets: true,
       // There are also additional JS chunk files if you use code splitting.
       chunkFilename: isEnvProduction
-        ? 'static/js/[name].[contenthash:8].chunk.js'
-        : isEnvDevelopment && 'static/js/[name].chunk.js',
+        ? `static/js/[name]${version}.[contenthash:8].chunk.js`
+        : isEnvDevelopment && `static/js/[name]${version}.chunk.js`,
       // webpack uses `publicPath` to determine where the app is being served from.
       // It requires a trailing slash, or the file assets will get an incorrect path.
       // We inferred the "public path" (such as / or /my-project) from homepage.
