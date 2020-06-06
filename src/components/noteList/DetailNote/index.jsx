@@ -8,6 +8,7 @@ import CONSTURL from '../../../config/Consturl';
 import Request from '../../../config/Request';
 import Empty from '../../otherComponents/Empty';
 import { NoteArticleContext } from '../../../pages/Note';
+import Share from '../../otherComponents/Share';
 import './detailNote.scss';
 // 详细笔记页面
 function DetailNote(){
@@ -89,6 +90,7 @@ function DetailNote(){
                         <div className="nav-tiitle">笔记导航</div>
                         { tocify && tocify.render() }
                     </div>
+                    <Share />
                 </Col>
             </Row>
         );
